@@ -18,15 +18,15 @@ const Navbar = () => {
             <div onClick={()=>{setOpen(!open)}} className="text-3x1 absolute z-[2] right-8 top-8 cursor-pointer md:hidden">
             <ion-icon style={{fontSize:35}} name={open ? 'close':'menu'}></ion-icon>
             </div>
-            <ul className={`md:justify-center md:space-x-16 sm:flex h-screen justify-items-start absolute md:static bg-grisesito pt-8 md:z-auto z-[1] left-0 w-full md:w-auto md:pl-0 pl-12 transition-all duration-500 ease-in ${open ? 'top-0':'top-[-100%]'}`} >
+            <ul className={`md:justify-center md:space-x-16 sm:flex  justify-items-start absolute md:static bg-white pt-8 md:z-auto z-[1] left-0 w-full md:w-auto md:pl-0 pl-12 transition-all duration-500 ease-in ${open ? 'top-0':'top-[-100%]'}`} >
             {[
                 ["Inicio", "/"],
                 ["Nosotros", "/sobre-nosotros"],
                 ["Blog", "/blog"],
                 ["Contact", "/contacto"],
                 ["Tienda en linea", "/productos"],
-                [<ion-icon name="cart-outline"></ion-icon>, "/contacto"],
-                [<ion-icon name="person-circle-outline"></ion-icon>, "/tienda"],
+                [<ion-icon style={{fontSize:35}} name="cart-outline"></ion-icon>, "/contacto"],
+                [<ion-icon style={{fontSize:35}} name="person-circle-outline"></ion-icon>, "/tienda"],
                
               ].map(([title, url]) => (
                 <li
