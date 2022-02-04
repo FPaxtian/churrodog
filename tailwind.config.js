@@ -4,9 +4,15 @@ module.exports = {
     extend: {
       colors: {
         "rojito": "#ff141e",
+        "rojitoSubidito":"#C40D15",
         "azulito":"#002360",
         "grisesito":"#F6F6F6"
       },
+      width: {
+        'card1': '35%',
+      },
+     
+
     },
   },
   plugins: [],
