@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.one{
+    width: 100%;
+    
+}
+.img1{
+    width: 90%;
+    margin-top: -8%;
+
+}
+.salto{
+    border: 10px solid #F6F6F6;
+    border-radius: 5px;
+}
+.bandera{
+    background-image: url('../../assets/perros-blur.png');
+    backdrop-filter: blur(2px);
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center center;
+}
