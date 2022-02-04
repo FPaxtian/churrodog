@@ -1,4 +1,7 @@
 import React from "react";
+import {
+  Link
+} from "react-router-dom"
 import "./css/one.css";
 const Home = () => {
   return (
@@ -23,9 +26,11 @@ const Home = () => {
                   es un alimento con causa, cada compra que tú haces se refleja
                   en alimento para un perrito en situación de refugio.
                 </h2>
-                <button className="bg-rojito hover:bg-rojitoSubidito text-white font-semibold py-2 px-10 mx-2 my-5 md:px-10 md:mx-9 lg:py-4 lg:px-20 lg:mx-9 lg:my-10   rounded-full">
-                  Comprar ahora
-                </button>
+                <div class="my-12">
+                  <Link to="/productos" className="bg-rojito hover:bg-rojitoSubidito text-white font-semibold py-2 px-10 mx-2 my-5 md:px-10 md:mx-9 lg:py-4 lg:px-20 lg:mx-9 lg:my-10   rounded-full">
+                    Comprar ahora
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -46,7 +51,7 @@ const Home = () => {
               <a class="underline decoration-rojito font-bold">
                 {" "}
                 80% proteína y 20% carbohidratos (arroz y maíz).
-              </a>
+                
             </p>
           </div>
           <div className=" shadow-2xl font-medium shadow-black rounded-xl bg-white p-10  w-72 h-auto grid content-center items-center justify-center lg:w-2/6">
