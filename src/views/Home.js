@@ -51,7 +51,7 @@ const Home = () => {
               <a class="underline decoration-rojito font-bold">
                 {" "}
                 80% proteína y 20% carbohidratos (arroz y maíz).
-                
+                </a>
             </p>
           </div>
           <div className=" shadow-2xl font-medium shadow-black rounded-xl bg-white p-10  w-72 h-auto grid content-center items-center justify-center lg:w-2/6">
