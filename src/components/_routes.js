@@ -8,6 +8,8 @@ import About from '../views/About'
 import Blog from '../views/Blog'
 import Contact from '../views/Contact'
 import Products from '../views/Products'
+import Account from '../views/Account'
+import DashboardClient from '../views/DashboardClient'
 
 const Routes = () => {
 
@@ -29,6 +31,13 @@ const Routes = () => {
             <Route path="/productos">
                 <Products />
             </Route>
+            <Route path="/cuenta">
+                <Account />
+            </Route>
+            <Route path="/dashboard-cliente">
+                <DashboardClient />
+            </Route>
+            
         </Switch>
 
 
