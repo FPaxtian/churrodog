@@ -6,7 +6,8 @@ module.exports = {
         "rojito": "#ff141e",
         "rojitoSubidito":"#C40D15",
         "azulito":"#002360",
-        "grisesito":"#F6F6F6"
+        "grisesito":"#F6F6F6",
+        "grisesitoFuertito":"#E5E7EB"
       },
       width: {
         'card1': '35%',
