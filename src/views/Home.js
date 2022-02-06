@@ -7,6 +7,7 @@ import FirstSection from '../components/_first_section';
 
 const Home = () => {
   return (
+    
 
     <div className="one ">
       {/* first section */}
@@ -21,8 +22,8 @@ const Home = () => {
       <ThirdSection />
 
       {/* fourth section */}
-      <hr className="salto" />
-      <FourthSection />
+      {/* <hr className="salto" />
+      <FourthSection /> */}
 
     </div>
   );
