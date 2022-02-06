@@ -1,7 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Product from '../components/_product';
+import axios from 'axios'
 
 const Products = () => {
+
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+    getProducts()
+  }, [])
+
+  const getProducts = async () => {
+    try {
+      await axios
+        .get(`api/v1/products/`)
+        .then(res => {
+          setProducts(res.data)
+        })
+        .catch(error => {
+          console.log('Error: ', error)
+        });
+    } catch (error) {
+    }
+  }
+
+
   return (
     <div className="contenedor padre bg-black w-auto h-auto">
       <div className="w-full h-[auto] bg-white mx-auto">
@@ -13,10 +36,13 @@ const Products = () => {
         <div class="container mx-auto">
           <div className="contenedor-padre w-full h-auto grid grid-cols-2 lg:grid-cols-4 2xl:grid-cols-4">
 
-            <Product />
-            <Product />
-            <Product />
-            <Product />
+            {
+              products.map((data) => {
+                return (
+                  <Product key={data._id} product={data} />
+                )
+              })
+            }
 
 
           </div>

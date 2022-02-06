@@ -4,8 +4,12 @@ import {
 } from "react-router-dom"
 import Routes from './components/_routes'
 import Navbar from './components/_navbar'
+import axios from 'axios'
 
 function App() {
+
+  axios.defaults.baseURL = 'https://churro-dog-server-test.herokuapp.com/';
+
   return (
     <Router>
       <div>

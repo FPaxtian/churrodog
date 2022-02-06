@@ -1,7 +1,8 @@
 import React from 'react'
 
-const Product = () => {
+const Product = (props) => {
 
+    console.log("aqui van los datos", props.product);
     return (
         <div>
             <div className=" contenedor-hijo relative shadow-2xl shadow-[rgb(176,176,176)] mx-3 my-3 lg:mx-10 lg:my-10 rounded-lg  w-[90%] h-[auto]  lg:w-[75%] xl:h-[45vh]  bg-white">
