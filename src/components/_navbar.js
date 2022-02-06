@@ -25,7 +25,7 @@ const Navbar = () => {
                 ["Blog", "/blog"],
                 ["Contacto", "/contacto"],
                 ["Tienda en linea", "/productos"],
-                [<ion-icon style={{fontSize:35}} name="cart-outline"></ion-icon>, "/cuenta"],
+                [<ion-icon style={{fontSize:35}} name="cart-outline"></ion-icon>, "/dashboard-cliente"],
                 [<ion-icon style={{fontSize:35}} name="person-circle-outline"></ion-icon>, "/cuenta"],
                
               ].map(([title, url]) => (
