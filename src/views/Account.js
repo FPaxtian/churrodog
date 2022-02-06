@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Account = () => {
-  const status = "gato";
+  const status = "recibido";
   return (
     <div className="bg-white ">
       <div class="grid grid-cols-1 lg:flex p-5 gap-4">
@@ -44,7 +44,6 @@ const Account = () => {
               </button>
             </div>
           </div>
-
           <div class=" producto mt-10  lg:w-[100%] h-auto shadow-lg bg-grisesitoFuertito text-azulito text-lg  text-left p-2 lg:p-5 rounded-lg flex">
             <div className="text-sm   bg-grisesitoFuertito w-[70%] h-auto p-0">
               <ul className="p-5 leading-1">
@@ -70,18 +69,28 @@ const Account = () => {
               <div className="contenedor-padre bg-grisesitoFuertesito 2-full lg:w-full h-1/2 lg:h-auto grid grid-cols-1">
                 <h1 className="text-center font-bold">Estatus</h1>
                 <div className="text-center">
-                  {status == "pendiente" ? (
+                  {status == "recibido" ? (
                     <Link>
                       <ion-icon
+                        className="text-lg"
+                        style={{ color: "green" }}
+                        name="checkmark-circle"
+                      ></ion-icon>
+                      <h1 className="text-center pb-10">Recibido</h1>
+                    </Link>
+                  ) : status == "pendiente" ? (
+                    <Link>
+                     <ion-icon
                         className="text-lg"
                         style={{ color: "red" }}
                         name="alert-circle"
                       ></ion-icon>
-                      <h1 className="text-center pb-10">En proceso</h1>
+                      <h1 className="text-center text-sm pb-10">En proceso</h1>
+                      
                     </Link>
                   ) : (
                     <Link>
-                      <ion-icon
+                    <ion-icon
                         className="text-lg"
                         style={{ color: "#002360" }}
                         name="airplane"
@@ -93,102 +102,7 @@ const Account = () => {
               </div>
             </div>
           </div>
-          <div class=" producto mt-10  lg:w-[100%] h-auto shadow-lg bg-grisesitoFuertito text-azulito text-lg  text-left p-2 lg:p-5 rounded-lg flex">
-            <div className="text-sm   bg-grisesitoFuertito w-[70%] h-auto p-0">
-              <ul className="p-5 leading-1">
-                <li className="font-bold">
-                  Producto: <a className="font-normal	">ChurroDog 20kg </a>{" "}
-                </li>
-                <li className="font-bold">
-                  Cantidad:<a className="font-normal	">5</a>{" "}
-                </li>
-                <li className="font-bold">
-                  Dirección de envio:{" "}
-                  <a className="font-normal	">
-                    Allende #1503 col.Centro Coatzacoalcos
-                  </a>
-                </li>
-                <li className="font-bold">
-                  Numero de telefono:{" "}
-                  <a className="font-normal	">+52 921 132 5408</a>
-                </li>
-              </ul>
-            </div>
-            <div className="bg-transparent w-[30%] lg:flex">
-              <div className="contenedor-padre bg-grisesitoFuertesito 2-full lg:w-full h-1/2 lg:h-auto grid grid-cols-1">
-                <h1 className="text-center font-bold">Estatus</h1>
-                <div className="text-center">
-                  {status == "pendiente" ? (
-                    <Link>
-                      <ion-icon
-                        className="text-lg"
-                        style={{ color: "red" }}
-                        name="alert-circle"
-                      ></ion-icon>
-                      <h1 className="text-center pb-10">En proceso</h1>
-                    </Link>
-                  ) : (
-                    <Link>
-                      <ion-icon
-                        className="text-lg"
-                        style={{ color: "#002360" }}
-                        name="airplane"
-                      ></ion-icon>
-                      <h1 className="text-center text-sm pb-10">Enviado</h1>
-                    </Link>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class=" producto mt-10  lg:w-[100%] h-auto shadow-lg bg-grisesitoFuertito text-azulito text-lg  text-left p-2 lg:p-5 rounded-lg flex">
-            <div className="text-sm   bg-grisesitoFuertito w-[70%] h-auto p-0">
-              <ul className="p-5 leading-1">
-                <li className="font-bold">
-                  Producto: <a className="font-normal	">ChurroDog 20kg </a>{" "}
-                </li>
-                <li className="font-bold">
-                  Cantidad:<a className="font-normal	">5</a>{" "}
-                </li>
-                <li className="font-bold">
-                  Dirección de envio:{" "}
-                  <a className="font-normal	">
-                    Allende #1503 col.Centro Coatzacoalcos
-                  </a>
-                </li>
-                <li className="font-bold">
-                  Numero de telefono:{" "}
-                  <a className="font-normal	">+52 921 132 5408</a>
-                </li>
-              </ul>
-            </div>
-            <div className="bg-transparent w-[30%] lg:flex">
-              <div className="contenedor-padre bg-grisesitoFuertesito 2-full lg:w-full h-1/2 lg:h-auto grid grid-cols-1">
-                <h1 className="text-center font-bold">Estatus</h1>
-                <div className="text-center">
-                  {status == "pendiente" ? (
-                    <Link>
-                      <ion-icon
-                        className="text-lg"
-                        style={{ color: "red" }}
-                        name="alert-circle"
-                      ></ion-icon>
-                      <h1 className="text-center pb-10">En proceso</h1>
-                    </Link>
-                  ) : (
-                    <Link>
-                      <ion-icon
-                        className="text-lg"
-                        style={{ color: "#002360" }}
-                        name="airplane"
-                      ></ion-icon>
-                      <h1 className="text-center text-sm pb-10">Enviado</h1>
-                    </Link>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
+          
         </div>
         {/* direcciones */}
         <div class=" lg:w-[30%] h-full shadow-lg bg-grisesitoFuertito text-azulito text-lg  text-left p-2 lg:p-5 rounded-lg r">
