@@ -10,6 +10,9 @@ import Contact from '../views/Contact'
 import Products from '../views/Products'
 import Account from '../views/Account'
 import DashboardClient from '../views/DashboardClient'
+import Direction from '../views/Direction'
+import Payment from '../views/Payment'
+
 
 const Routes = () => {
 
@@ -36,6 +39,12 @@ const Routes = () => {
             </Route>
             <Route path="/dashboard-cliente">
                 <DashboardClient />
+            </Route>
+            <Route path="/direction-payment">
+                <Direction />
+            </Route>
+            <Route path="/payment-method">
+                <Payment />
             </Route>
             
         </Switch>
