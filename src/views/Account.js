@@ -80,17 +80,17 @@ const Account = () => {
                     </Link>
                   ) : status == "pendiente" ? (
                     <Link>
-                     <ion-icon
+                      <ion-icon
                         className="text-lg"
                         style={{ color: "red" }}
                         name="alert-circle"
                       ></ion-icon>
                       <h1 className="text-center text-sm pb-10">En proceso</h1>
-                      
+
                     </Link>
                   ) : (
                     <Link>
-                    <ion-icon
+                      <ion-icon
                         className="text-lg"
                         style={{ color: "#002360" }}
                         name="airplane"
@@ -102,7 +102,7 @@ const Account = () => {
               </div>
             </div>
           </div>
-          
+
         </div>
         {/* direcciones */}
         <div class=" lg:w-[30%] h-full shadow-lg bg-grisesitoFuertito text-azulito text-lg  text-left p-2 lg:p-5 rounded-lg r">
