@@ -10,7 +10,7 @@ import NavbarAdmin from "./components/_navarAdming";
 function App() {
 
   axios.defaults.baseURL = 'https://churro-dog-server-test.herokuapp.com/';
-  const admin = false;
+  const admin = true;
 
 
   return (

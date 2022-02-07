@@ -15,10 +15,10 @@ const Navbar = () => {
             alt='churro dog logo'
           ></img>
         </div>
-        <div onClick={() => { setOpen(!open) }} className="text-3x1 absolute z-[2] right-8 top-8 cursor-pointer md:hidden">
+        <div onClick={() => { setOpen(!open) }} className="text-3x1 absolute z-[2] right-8 top-8 cursor-pointer lg:hidden">
           <ion-icon style={{ fontSize: 35 }} name={open ? 'close' : 'menu'}></ion-icon>
         </div>
-        <ul className={`md:justify-center md:space-x-16 sm:flex  justify-items-start absolute md:static bg-white pt-8 md:z-auto z-[1] left-0 w-full md:w-auto md:pl-0 pl-12 transition-all duration-500 ease-in ${open ? 'top-0' : 'top-[-100%]'}`} >
+        <ul className={`lg:justify-center lg:space-x-16 sm:flex  justify-items-start absolute lg:static bg-white pt-8 lg:z-auto z-[1] left-0 w-full lg:w-auto lg:pl-0 pl-12 transition-all duration-500 ease-in ${open ? 'top-0' : 'top-[-100%]'}`} >
           {[
             ["Inicio", "/"],
             ["Nosotros", "/sobre-nosotros"],

@@ -180,7 +180,6 @@ const Cart = () => {
                 <div className="pedido bg-white w-full h-auto grid text-azulito items-center text-center">
                   <h1>Cantidad</h1>
                   <div className="bg-white w-auto h-auto flex m-5 text-azulito">
-
                     <div className="text-azulito bg-white border-l-4 border-t-4 border-b-4 border-grisesitoFuertito w-[50%] h-full flex justify-center content-center items-center text-2xl ">
                       <button
                         onClick={() => restar()}
@@ -221,8 +220,23 @@ const Cart = () => {
               </div>
             </div>
           ) : (
-            <div className="pedido flex justify-center items-center bg-white w-full h-[17vh] border-y-4 border-grisesitoFuertito text-center text-2xl">
-              Aun no tienes productos
+            <div className="pedido flex justify-center items-center bg-white w-full h-auto border-y-4 border-grisesitoFuertito text-center text-2xl">
+              <div className="w-[50%] mt-20">
+                <img
+                  src={require("../assets/triste.png")}
+                  className="img1 object-cover h-auto "
+                  alt="churrodog perro feliz"
+                ></img>
+                <h1 className="text-xl p-5 ">
+                  Aún no tienes nada en tu carrito,
+                  <Link to={("/productos")}>
+                    {" "}
+                    <a className="underline decoration-rojito ">
+                      empieza a comprar </a> para ayudar
+                     
+                  </Link>
+                </h1>
+              </div>
             </div>
           )}
         </div>

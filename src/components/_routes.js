@@ -12,6 +12,8 @@ import Account from '../views/Account'
 import Cart from '../views/Cart'
 import Direction from '../views/Direction'
 import Payment from '../views/Payment'
+import Login from '../views/Login'
+import Singin from '../views/Singin'
 
 
 const Routes = () => {
@@ -45,6 +47,12 @@ const Routes = () => {
             </Route>
             <Route path="/payment-method">
                 <Payment />
+            </Route>
+            <Route path="/login">
+                <Login />
+            </Route>
+            <Route path="/singin">
+                <Singin />
             </Route>
 
         </Switch>
