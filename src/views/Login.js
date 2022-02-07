@@ -19,7 +19,7 @@ const Login = () => {
       <div className="bg-white w-screen lg:w-1/2 h-full  ">
         <div className=" w-full h-full flex  justify-center items-center lg:inline ">
           <div className="lg:m-20   w-[90%] lg:w-[60%] 2xl:w-[50%] h-[80%] p-10  ">
-            <h1 className="text-4xl font-semibold md:py-10 ">Log in</h1>
+            <h1 className="text-4xl font-semibold md:py-10 ">Bienvenido churro amigo</h1>
             <form className="mt-10 lg:mt-1">
               <label>
                 <input

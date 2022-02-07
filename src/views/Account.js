@@ -8,7 +8,7 @@ const Account = () => {
 
   const editarUsuario = () => {
     Swal.fire({
-      title: "Agrega una dirección",
+      title: "Edita tus datos",
       html: `<input type="text" id="nombre" class="swal2-input" placeholder="Nombre">
         <input type="text" id="apellidos" class="swal2-input" placeholder="Apellidos">
         <input type="text" id="telefono" class="swal2-input" placeholder="Telefono">
@@ -21,18 +21,18 @@ const Account = () => {
       confirmButtonColor: "#002360",
       cancelButtonColor: "#ff141e",
       preConfirm: () => {
-        const calle = Swal.getPopup().querySelector("#nombre").value;
-        const colonia = Swal.getPopup().querySelector("#apellidos").value;
-        const numero = Swal.getPopup().querySelector("#telefono").value;
+        const nombre = Swal.getPopup().querySelector("#nombre").value;
+        const apellidos = Swal.getPopup().querySelector("#apellidos").value;
+        const telefono = Swal.getPopup().querySelector("#telefono").value;
         const correo = Swal.getPopup().querySelector("#correo").correo;
 
-        if (!calle || !colonia || !numero || !correo) {
-          Swal.showValidationMessage(`Escribe tu direccion`);
+        if (!nombre || !apellidos || !telefono || !correo) {
+          Swal.showValidationMessage(`Escribe tus datos`);
         }
         return {
-          calle: calle,
-          colonia: colonia,
-          numero: numero,
+          nombre: nombre,
+          apellidos: apellidos,
+          telefono: telefono,
           correo: correo,
         };
       },

@@ -19,7 +19,7 @@ const Singin = () => {
       <div className="bg-white w-screen lg:w-1/2 h-full  ">
         <div className=" w-full h-full flex  justify-center items-center lg:inline ">
           <div className="lg:m-20 lg:mt-1   w-[90%] lg:w-[60%] 2xl:w-[50%] h-[80%] p-10   ">
-            <h1 className="text-4xl font-semibold md:py-10 ">Sing in</h1>
+            <h1 className="text-4xl font-semibold md:py-10 ">Sé un churro amigo</h1>
             <form className="mt-5 lg:mt-0">
             <label>
                 <input

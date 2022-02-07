@@ -20,10 +20,11 @@ const NavbarAdmin = () => {
         </div>
         <ul className={`lg:justify-center lg:space-x-16 sm:flex  justify-items-start absolute lg:static bg-white pt-8 lg:z-auto z-[1] left-0 w-full lg:w-auto lg:pl-0 pl-12 transition-all duration-500 ease-in ${open ? 'top-0' : 'top-[-100%]'}`} >
           {[
-            ["Blog", "/blog"],
-            ["Pedidos", "/contacto"],
-            ["Tu tienda", "/productos"],
-            [<ion-icon style={{ fontSize: 35 }} name="person-circle-outline"></ion-icon>, "/cuenta"],
+             ["Dashboard", "/adminDashboard"],
+            ["Blog", "/blogAdmin"],
+            ["Pedidos", "/pedidosAdmin"],
+            ["Tu tienda", "/productsAdmin"],
+            [<ion-icon style={{ fontSize: 35 }} name="person-circle-outline"></ion-icon>, "/cuentaAdmin"],
 
           ].map(([title, url]) => (
             <li
@@ -33,7 +34,7 @@ const NavbarAdmin = () => {
           ))}
 
         </ul>
-
+       
       </div>
     </div>
   );
