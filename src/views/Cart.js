@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const DashboardClient = () => {
-  const carrito = true;
+const Cart = () => {
+  const carrito = false;
 
   const [numero, setNumero] = useState(0);
 
@@ -178,9 +178,9 @@ const DashboardClient = () => {
                 </div>
 
                 <div className="pedido bg-white w-full h-auto grid text-azulito items-center text-center">
-                <h1>Cantidad</h1>
+                  <h1>Cantidad</h1>
                   <div className="bg-white w-auto h-auto flex m-5 text-azulito">
-                    
+
                     <div className="text-azulito bg-white border-l-4 border-t-4 border-b-4 border-grisesitoFuertito w-[50%] h-full flex justify-center content-center items-center text-2xl ">
                       <button
                         onClick={() => restar()}
@@ -231,4 +231,4 @@ const DashboardClient = () => {
   );
 };
 
-export default DashboardClient;
+export default Cart;

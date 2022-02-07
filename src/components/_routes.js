@@ -9,7 +9,7 @@ import Blog from '../views/Blog'
 import Contact from '../views/Contact'
 import Products from '../views/Products'
 import Account from '../views/Account'
-import DashboardClient from '../views/DashboardClient'
+import Cart from '../views/Cart'
 import Direction from '../views/Direction'
 import Payment from '../views/Payment'
 
@@ -37,8 +37,8 @@ const Routes = () => {
             <Route path="/cuenta">
                 <Account />
             </Route>
-            <Route path="/dashboard-cliente">
-                <DashboardClient />
+            <Route path="/carrito-compras">
+                <Cart />
             </Route>
             <Route path="/direction-payment">
                 <Direction />
@@ -46,7 +46,7 @@ const Routes = () => {
             <Route path="/payment-method">
                 <Payment />
             </Route>
-            
+
         </Switch>
 
 
