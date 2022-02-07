@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const DashboardClient = () => {
   const carrito = true;
@@ -27,7 +28,7 @@ const DashboardClient = () => {
                   <div className="pedido-foto bg-white w-full h-auto flex justify-center  items-center p-2">
                     <img
                       src={require("../assets/SACO 20 KILOS.jpg")}
-                      className="img1  h-[80%] "
+                      className="img1 object-cover h-[80%] "
                       alt="churrodog perro feliz"
                     ></img>
                   </div>
@@ -88,7 +89,7 @@ const DashboardClient = () => {
                   <div className="pedido-foto bg-white w-full h-auto flex justify-center  items-center p-2">
                     <img
                       src={require("../assets/SACO 20 KILOS.jpg")}
-                      className="img1  h-[80%] "
+                      className="img1  object-cover h-[80%] "
                       alt="churrodog perro feliz"
                     ></img>
                   </div>
@@ -149,7 +150,7 @@ const DashboardClient = () => {
                   <div className="pedido-foto bg-white w-full h-auto flex justify-center  items-center p-2">
                     <img
                       src={require("../assets/SACO 20 KILOS.jpg")}
-                      className="img1  h-[80%] "
+                      className="img1 object-cover h-[80%] "
                       alt="churrodog perro feliz"
                     ></img>
                   </div>
@@ -177,8 +178,9 @@ const DashboardClient = () => {
                 </div>
 
                 <div className="pedido bg-white w-full h-auto grid text-azulito items-center text-center">
-                  <h1>Cantidad</h1>
-                  <div className="bg-white w-auto h-auto flex gap-0 m-5  text-azulito">
+                <h1>Cantidad</h1>
+                  <div className="bg-white w-auto h-auto flex m-5 text-azulito">
+                    
                     <div className="text-azulito bg-white border-l-4 border-t-4 border-b-4 border-grisesitoFuertito w-[50%] h-full flex justify-center content-center items-center text-2xl ">
                       <button
                         onClick={() => restar()}
@@ -205,30 +207,24 @@ const DashboardClient = () => {
                   $1879.47
                 </div>
               </div>
-              
-              
-              
-              
+              <div className="pedido bg-white w-full h-auto  order border-y-4 border-grisesitoFuertito flex justify-end items-center">
+                <h1 className=" p-5  lg:p-10 font-bold text-2xl text-azulito">
+                  Total: $1839
+                </h1>
+              </div>
+              <div className="pedido bg-white w-full h-[15vh]  border-t-1 border-grisesitoFuertito flex justify-end items-center">
+                <Link to={"/direction-payment"}>
+                  <button className="bg-rojito lg:h-[5vh] lg:w-[10vw] hover:bg-rojitoSubidito duration-500 text-white font-semibold py-1 px-3 mx-10 my-2 md:px-10 md:mx-9 lg:py-1 lg:px-5 lg:mx-20 lg:my-0   rounded-full">
+                    Pagar
+                  </button>
+                </Link>
+              </div>
             </div>
           ) : (
-            <div className="pedido bg-white w-full h-[17vh] border-y-4 border-grisesitoFuertito">
-              no tienes
+            <div className="pedido flex justify-center items-center bg-white w-full h-[17vh] border-y-4 border-grisesitoFuertito text-center text-2xl">
+              Aun no tienes productos
             </div>
           )}
-          
-           <div className="pedido bg-white w-full h-auto  order border-y-4 border-grisesitoFuertito flex justify-end items-center">
-           <h1 className=" p-5  lg:p-10 font-bold text-2xl text-azulito">Total: $1839</h1>
-          </div>
-          
-          <div className="pedido bg-white w-full h-[15vh]  border-t-1 border-grisesitoFuertito flex justify-end items-center">
-            <button
-              onClick={() => restar()}
-              className="bg-rojito lg:h-[5vh] lg:w-[10vw] hover:bg-rojitoSubidito duration-500 text-white font-semibold py-1 px-3 mx-10 my-2 md:px-10 md:mx-9 lg:py-1 lg:px-5 lg:mx-20 lg:my-0   rounded-full"
-            >
-              Pagar
-            </button>
-          </div>
-          
         </div>
       </div>
     </div>

@@ -77,33 +77,32 @@ const Product = (props) => {
               </div>
             </div>
           </div>
-          <div className="bg-white w-full h-2/6 md:w-1/3 md:h-full ">
-            <div className="text-azulito p-5 md:mt-[60%]">
-              <div className="font-bold text-xl md:text-3xl">
+          <div className="bg-white w-full h-2/6 md:w-[80%] md:h-full  ">
+            <div className="text-azulito p-5 md:mt-[40%]">
+              <div className="font-bold text-xl md:text-2xl">
                 <h1>{props.product.name}</h1>
               </div>
-              <div className="text-xl w-[99%] text-left md:text-2xl ">
-                <p className="break-words py-1">{props.product.description}</p>
+              <div className="text-sm w-[99%] text-left md:text-sm ">
+                <p className="break-words py-1">{props.product.description}Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam </p>
               </div>
               <div className="text-xl">
                 <h1>$ {props.product.price}</h1>
               </div>
-              <div className="bg-white flex md:block  w-auto justfy-center items-center content-center">
-                <button className="bg-rojito  hover:bg-rojitoSubidito duration-500 text-white font-semibold py-1 px-3 mx-10 my-2  md:my-4 md:px-5 md:mx-1 md:w-[100%]  rounded-full">
+              <div className="bg-white w-[100%] flex m-0">
+                <button className="bg-rojito  hover:bg-rojitoSubidito duration-500 text-white font-semibold py-1 px-3 mx-10 my-2  md:my-4 md:px-5 md:mx-1 md:w-[50%]  rounded-full">
                   Comprar
                 </button>
-                <div className="pedido bg-white w-full h-auto  border-t-1 border-grisesitoFuertito flex justify-end items-center">
-                  <button onClick={()=>agregado()} className="bg-azulito  hover:bg-azulito duration-500 text-white font-semibold py-1 px-10 mx-10 my-2   md:my-2 md:px-5 md:mx-1  md:w-[100%]  rounded-full">
-                    <ion-icon style={{ fontSize: 20 }} name="cart"></ion-icon>
-                  </button>
-                </div>
+                <button className="bg-azulito  hover:bg-rojitoSubidito duration-500 text-white font-semibold py-1 px-3 mx-10 my-2  md:my-4 md:px-5 md:mx-1 md:w-[50%]  rounded-full">
+                <ion-icon style={{ fontSize: 20 }} name="cart"></ion-icon>
+                </button>
+              
               </div>
             </div>
           </div>
         </div>
       </ReactModal>
     </div>
-  );
+  ); 
 };
 
 export default Product;
