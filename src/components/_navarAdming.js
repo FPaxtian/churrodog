@@ -3,7 +3,7 @@ import {
   Link
 } from "react-router-dom"
 
-const Navbar = () => {
+const NavbarAdmin = () => {
   let [open, setOpen] = useState(false)
   return (
     <div className="App">
@@ -20,13 +20,11 @@ const Navbar = () => {
         </div>
         <ul className={`lg:justify-center lg:space-x-16 sm:flex  justify-items-start absolute lg:static bg-white pt-8 lg:z-auto z-[1] left-0 w-full lg:w-auto lg:pl-0 pl-12 transition-all duration-500 ease-in ${open ? 'top-0' : 'top-[-100%]'}`} >
           {[
-            ["Inicio", "/"],
-            ["Nosotros", "/sobre-nosotros"],
-            ["Blog", "/blog"],
-            ["Contacto", "/contacto"],
-            ["Tienda en linea", "/productos"],
-            [<ion-icon style={{ fontSize: 35 }} name="cart-outline"></ion-icon>, "/carrito-compras"],
-            [<ion-icon style={{ fontSize: 35 }} name="person-circle-outline"></ion-icon>, "/cuenta"],
+            ["Dashboard", "/adminDashboard"],
+            ["Blog", "/blogAdmin"],
+            ["Pedidos", "/pedidosAdmin"],
+            ["Tu tienda", "/productsAdmin"],
+            [<ion-icon style={{ fontSize: 35 }} name="person-circle-outline"></ion-icon>, "/cuentaAdmin"],
 
           ].map(([title, url]) => (
             <li
@@ -43,4 +41,4 @@ const Navbar = () => {
 }
 
 
-export default Navbar
+export default NavbarAdmin
