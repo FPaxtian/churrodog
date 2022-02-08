@@ -1,9 +1,64 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./css/one.css";
-
+import { logInApi, getUserCurrent } from '../api/auth'
+import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom"
 
 const Login = () => {
+
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  let history = useHistory()
+  let location = useLocation()
+
+  useEffect(() => {
+    _getCurrentUser()
+  }, [])
+  const _login = async () => {
+
+    if (email === "" || password === "") {
+      Swal.fire({
+        icon: 'error',
+        title: 'Faltan tus churro datos',
+        showConfirmButton: false,
+        timer: 1500
+      })
+    } else {
+
+      await logInApi({ email, password, churroAlerError, churroAlerSuccess, goToHome })
+
+    }
+
+  }
+
+  const churroAlerError = () => {
+    Swal.fire({
+      icon: 'error',
+      title: 'No te churro encontramos',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
+
+  const churroAlerSuccess = () => {
+    Swal.fire({
+      icon: 'success',
+      title: 'Bienvenido churro compañero!!',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
+
+  const goToHome = () => {
+    let { from } = location.state || { from: { pathname: "/" } }
+    history.replace(from)
+  }
+
+  const _getCurrentUser = async () => {
+    const user = await getUserCurrent()
+    console.log("user ", user);
+  }
   return (
     <div className="one  w-full h-[78vh] flex ">
       <div className="bg-grisesito md:w-1/2 h-full hidden lg:block text-left p-20">
@@ -26,6 +81,7 @@ const Login = () => {
                   placeholder="Email"
                   type="email"
                   name="email"
+                  onChange={data => setEmail(data.target.value)}
                   className="apearance-none block w-full  bg-white text-gray-700 border border-gray-200 rounded px-4 py-3 mb-3 lg:py-4 2xl:py-6 lg:px-4 lg:mb-3 leading-tight focus:outline-none focus:bg-white"
                 />
               </label>
@@ -34,11 +90,14 @@ const Login = () => {
                   placeholder="Contraseña"
                   type="password"
                   name="password"
+                  onChange={data => setPassword(data.target.value)}
                   className="apearance-none block w-full  bg-white text-gray-700 border border-gray-200 rounded px-4 py-3 mb-3 lg:py-4 2xl:py-6 lg:px-4 lg:mb-3 leading-tight focus:outline-none focus:bg-white"
                 />
               </label>
               <input
-                type="submit"
+                onClick={() => { _login() }}
+                type="button"
+                value="Entrar"
                 className=" block w-full lg:w-full bg-azulito text-white rounded px-4 py-3 lg:py-4 2xl:lg:py-6 lg:px-4 lg:mb-3 lg:mt-10 cursor-pointer"
               />
               <p className="text-zinc-500 text-sm mt-5 lg:mt-0 lg:text-lg ">
