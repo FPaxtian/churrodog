@@ -7,6 +7,7 @@ const Cart = () => {
   const [products, setProducts] = useState([])
   const [total, setTotal] = useState([])
   const [cart, setCart] = useState([])
+  const [loader, setLoader] = useState(true);
 
   useEffect(() => {
     getProducts()
@@ -18,6 +19,7 @@ const Cart = () => {
     const productsCart = await getProductsCartApi()
     console.log(productsCart);
     setProducts(productsCart)
+    setLoader(false)
   }
   const getTotal = async () => {
     const totalApi = await getTotalCartAPi()
@@ -53,6 +55,14 @@ const Cart = () => {
           <h1 className=" text-2xl lg:text-3xl 2xl:text-3xl mt-5 text-azulito underline decoration-rojito p-3">
             Carrito
           </h1>
+          {loader && (
+            <div className="w-full flex justify-center items-center content-center">
+              <img
+                src={require("../assets/perroEsperando.gif")}
+                alt="Funny image"
+              />
+            </div>
+          )}
           {cart.length === 0 ? (
             <div className="pedido flex justify-center items-center bg-white w-full h-[17vh] border-y-4 border-grisesitoFuertito text-center text-2xl">
               Aun no tienes productos

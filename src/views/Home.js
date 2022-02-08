@@ -7,16 +7,16 @@ import FirstSection from "../components/_first_section";
 import Swal from "sweetalert2";
 const Home = () => {
   const alerta = () => {
-    Swal.fire({
-      title: "<strong><u>¿Vives cerca de coatzacoalcos?</u></strong>",
-      icon: "info",
-      showCloseButton: true,
-   
-      focusConfirm: false,
-      confirmButtonColor: "#002360",
-      cancelButtonColor: "#ff141e",
-      confirmButtonText: '<a  href="/productos"> Si</a> ',
-    });
+    // Swal.fire({
+    //   title: "<strong><u>¿Vives cerca de coatzacoalcos?</u></strong>",
+    //   icon: "info",
+    //   showCloseButton: true,
+
+    //   focusConfirm: false,
+    //   confirmButtonColor: "#002360",
+    //   cancelButtonColor: "#ff141e",
+    //   confirmButtonText: '<a  href="/productos"> Si</a> ',
+    // });
   };
 
   useEffect(() => {

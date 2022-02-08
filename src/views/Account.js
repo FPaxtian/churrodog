@@ -1,18 +1,62 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import Swal from "sweetalert2";
 import LoginSelect from "../components/_loginSelect";
+import { getUserCurrent, updateUser, signOff } from '../api/auth'
+import Address from "../components/_address";
 
 const Account = () => {
   const status = "recibido";
+  const [user, setUser] = useState('')
+  let history = useHistory()
+  let location = useLocation()
 
-  const editarUsuario = () => {
+  useEffect(() => {
+    _getUserCurrent()
+  }, [])
+  const _getUserCurrent = async () => {
+    const userCurrent = await getUserCurrent()
+    setUser(userCurrent)
+
+  }
+
+  const _updateUser = async (fullname, cellphone) => {
+    const user_id = user._id
+    await updateUser({ fullname, cellphone, user_id, _getUserCurrent, churroAlerSuccess })
+  }
+
+  const _signOff = async () => {
+    await signOff({ churroAlerOff, goToHome })
+  }
+
+  const goToHome = () => {
+    let { from } = location.state || { from: { pathname: "/" } }
+    history.replace(from)
+  }
+
+  const churroAlerOff = () => {
+    Swal.fire({
+      icon: 'info',
+      title: 'Churro vuelve pronto!!',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
+
+  const churroAlerSuccess = () => {
+    Swal.fire({
+      icon: 'success',
+      title: 'Churro datos actulizados con exito!!',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
+  const editarUsuario = (user) => {
     Swal.fire({
       title: "Edita tus datos",
-      html: `<input type="text" id="nombre" class="swal2-input" placeholder="Nombre">
-        <input type="text" id="apellidos" class="swal2-input" placeholder="Apellidos">
-        <input type="text" id="telefono" class="swal2-input" placeholder="Telefono">
-        <input type="email" id="correo" class="swal2-input" placeholder="Correo">`,
+      html: `<input type="text" id="nombre" class="swal2-input" placeholder="Nombre completo" value="${user.fullname}">
+        <input type="text" id="telefono" class="swal2-input" placeholder="Telefono" value="${user.cellphone}">
+        `,
 
       confirmButtonText: "Guardar",
       showCancelButton: true,
@@ -20,32 +64,24 @@ const Account = () => {
       focusConfirm: false,
       confirmButtonColor: "#002360",
       cancelButtonColor: "#ff141e",
-      preConfirm: () => {
-        const nombre = Swal.getPopup().querySelector("#nombre").value;
-        const apellidos = Swal.getPopup().querySelector("#apellidos").value;
-        const telefono = Swal.getPopup().querySelector("#telefono").value;
-        const correo = Swal.getPopup().querySelector("#correo").correo;
 
-        if (!nombre || !apellidos || !telefono || !correo) {
-          Swal.showValidationMessage(`Escribe tus datos`);
-        }
-        return {
-          nombre: nombre,
-          apellidos: apellidos,
-          telefono: telefono,
-          correo: correo,
-        };
-      },
     }).then((result) => {
-      Swal.fire(
-        `
-          calle: ${result.value.calle}
-          colonia: ${result.value.colonia}
-          numero: ${result.value.Numero}
-          codigo postal: ${result.value.Codigo}
-       
-        `.trim()
-      );
+      const fullname = Swal.getPopup().querySelector("#nombre").value;
+      const cellphone = Swal.getPopup().querySelector("#telefono").value;
+      //const correo = Swal.getPopup().querySelector("#correo").correo;
+      if (fullname == '' || cellphone == '') {
+        Swal.fire({
+          icon: 'error',
+          title: 'Faltan tus churro datos',
+          showConfirmButton: false,
+          timer: 1500
+        })
+      } else {
+        if (result.isConfirmed) {
+          _updateUser(fullname, cellphone)
+        }
+
+      }
     });
   };
 
@@ -57,7 +93,8 @@ const Account = () => {
         <input type="text" id="numero" class="swal2-input" placeholder="Numero">
         <input type="text" id="codigo" class="swal2-input" placeholder="Codigo postal">
         <input type="text" id="referencia" class="swal2-input" placeholder="referencia">
-        <input type="text" id="telefono" class="swal2-input" placeholder="telefono">`,
+        <input type="text" id="telefono" class="swal2-input" placeholder="telefono">
+        <input type="text" id="recibe" class="swal2-input" placeholder="quien recibe">`,
       confirmButtonText: "Guardar",
       showCancelButton: true,
       cancelButtonText: "Cerrar",
@@ -71,6 +108,7 @@ const Account = () => {
         const codigo = Swal.getPopup().querySelector("#codigo").value;
         const referencia = Swal.getPopup().querySelector("#referencia").value;
         const telefono = Swal.getPopup().querySelector("#telefono").value;
+        const recibe = Swal.getPopup().querySelector("#recibe").value;
 
         if (
           !calle ||
@@ -78,7 +116,8 @@ const Account = () => {
           !numero ||
           !codigo ||
           !referencia ||
-          !telefono
+          !telefono ||
+          !recibe
         ) {
           Swal.showValidationMessage(`Escribe tu direccion`);
         }
@@ -88,6 +127,8 @@ const Account = () => {
           numero: numero,
           referencia: referencia,
           telefono: telefono,
+          codigo: codigo,
+          recibe: recibe
         };
       },
     }).then((result) => {
@@ -95,24 +136,27 @@ const Account = () => {
         `
           calle: ${result.value.calle}
           colonia: ${result.value.colonia}
-          numero: ${result.value.Numero}
-          codigo postal: ${result.value.Codigo}
+          numero: ${result.value.numero}
+          codigo postal: ${result.value.codigo}
           referencia: ${result.value.referencia}
           telefono: ${result.value.telefono}
+          recibe: ${result.value.recibe}
         `.trim()
       );
     });
   };
-  const cuenta = false;
   return (
     <div className="bg-white ">
-      {cuenta ? (
+      {user.length === 0 ? (
+        <LoginSelect></LoginSelect>
+      ) : (
+
         <div class="grid grid-cols-1 lg:flex p-5 gap-4">
           <div class=" lg:w-[70%] h-full shadow-lg bg-white p-10 rounded-lg grid grid-cols-1">
             <div class=" lg:w-[70%] pt-5 h-[20vh]  bg-white text-azulito   text-left lg:p-10 ">
               <div className="mt-4 bg-white w-auto h-auto flex">
-                <h1 className="font-bold 2xl:text-3xl">Jesús Mendoza Silva</h1>
-                <Link onClick={() => editarUsuario()}>
+                <h1 className="font-bold 2xl:text-3xl">{user.fullname}</h1>
+                <Link onClick={() => editarUsuario(user)}>
                   <ion-icon
                     className="text-2xl"
                     style={{ marginLeft: 15 }}
@@ -120,28 +164,29 @@ const Account = () => {
                   ></ion-icon>
                 </Link>
               </div>
-              <div className="mt-4 bg-white w-auto h-auto pb-5 lg:pb-0">
+              <div className="mt-4 bg-white w-auto h-auto pb-5 lg:pb-10">
                 <ul className="text-sm 2xl:text-lg">
                   <li>
-                    <p className="lg:p-1">Número celular: +52 921 132 5408</p>
+                    <p className="lg:p-1">Número celular: +52 {user.cellphone}</p>
                   </li>
                   <li>
                     <p className="lg:p-1">
-                      Correo electronico: jmendoza@quaxar.com
+                      Correo electronico: {user.email}
                     </p>
                   </li>
                 </ul>
               </div>
             </div>
+            <br />
             <hr />
             <div className="flex mt-5 ">
               <div className="w-[50%] bg-white ">
-                <h1 className="lg:text-3xl 2xl:text-3xl mt-5 text-azulito underline decoration-rojito">
+                <h1 className="lg:text-3xl 2xl:text-3xl mt-5 font-bold">
                   Pedidos
                 </h1>
               </div>
-              <div className="w-[50%] lg:h-[4vh] bg-white flex  justify-end  ">
-                <button className="text-sm lg:text-2xl bg-rojito hover:bg-rojitoSubidito duration-500 text-white font-semibold py-0 px-3 mx-1 my-2 md:px-10 md:mx-9 lg:py-0 lg:px-5 lg:mx-2 lg:my-0  rounded-full">
+              <div className="w-[50%] lg:h-[4vh] bg-white flex  justify-end ">
+                <button onClick={() => _signOff()} className="text-sm lg:text-2xl bg-rojito hover:bg-rojitoSubidito duration-500 text-white font-semibold py-0 px-3 mx-1 my-2 md:px-10 md:mx-9 lg:pb-9 lg:px-5 lg:mx-2 lg:my-0   rounded-full">
                   Cerrar sesión
                 </button>
               </div>
@@ -210,7 +255,7 @@ const Account = () => {
           <div class=" lg:w-[30%] h-full shadow-lg bg-grisesitoFuertito text-azulito text-lg  text-left p-2 lg:p-5 rounded-l-lg ">
             <div className="flex mt-5 ">
               <div className="w-[50%] bg-white rounded-l-lg">
-                <h1 className=" text-2xl lg:text-3xl 2xl:text-3xl mt-5 text-azulito underline decoration-rojito p-3">
+                <h1 className=" text-2xl lg:text-3xl 2xl:text-3xl mt-5 font-bold p-3">
                   Tus direcciones
                 </h1>
               </div>
@@ -220,57 +265,12 @@ const Account = () => {
                 </Link>
               </div>
             </div>
-            <div className="direcciones bg-white w-full  mt-5 p-2 text-sm rounded-lg">
-              <div className="bg-transparent-full h-auto">
-                <ul className="p-5 leading-1">
-                  <li className="font-bold">
-                    Calle:{" "}
-                    <a className="font-normal	"> Allende #1503 Coatzacoalcos</a>{" "}
-                  </li>
-                  <li className="font-bold">
-                    Colonia:<a className="font-normal	">Benito juarez norte</a>{" "}
-                  </li>
-                  <li className="font-bold">
-                    Ciudad <a className="font-normal	">Coatzacoalcos</a>
-                  </li>
-                  <li className="font-bold">
-                    Codigo postal <a className="font-normal	">96400</a>
-                  </li>
-                  <li className="font-bold">
-                    Numero de telefono:{" "}
-                    <a className="font-normal	">+52 921 132 5408</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            <Address />
 
-            <div className="direcciones bg-white w-full  mt-5 p-2 text-sm rounded-lg">
-              <div className="bg-transparent-full h-auto">
-                <ul className="p-5 leading-1">
-                  <li className="font-bold">
-                    Calle:{" "}
-                    <a className="font-normal	"> Allende #1503 Coatzacoalcos</a>{" "}
-                  </li>
-                  <li className="font-bold">
-                    Colonia:<a className="font-normal	">Benito juarez norte</a>{" "}
-                  </li>
-                  <li className="font-bold">
-                    Ciudad <a className="font-normal	">Coatzacoalcos</a>
-                  </li>
-                  <li className="font-bold">
-                    Codigo postal <a className="font-normal	">96400</a>
-                  </li>
-                  <li className="font-bold">
-                    Numero de telefono:{" "}
-                    <a className="font-normal	">+52 921 132 5408</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
+
           </div>
         </div>
-      ) : (
-        <LoginSelect></LoginSelect>
+
       )}
     </div>
   );

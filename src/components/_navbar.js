@@ -10,7 +10,7 @@ const Navbar = () => {
       <div className=" body-font border-b border-gray-200 py-3 md:px-10 px-7">
         <div className="flex sm:justify-center ">
           <img
-            src={require("../assets/CHURRO CIRCULO PNG.png")}
+            src={require("../assets/logo.jpeg")}
             className="w-32"
             alt='churro dog logo'
           ></img>
