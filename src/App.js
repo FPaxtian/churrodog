@@ -22,17 +22,7 @@ function App() {
     setUser(userCurrent)
   }
   return (
-    <Router>
-      <div>
-        {
-          //user.type_user === "1" ? "admin" : "normal"
-          user.type_user === "1" ? (<NavbarAdmin />) : (<Navbar />)
-        }
-
-        <Routes />
-
-      </div>
-    </Router>
+    <h1>Hola</h1>
   );
 }
 

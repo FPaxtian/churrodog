@@ -28,13 +28,13 @@ const LoginSelect = () => {
                   </button>
                 </Link>
                 <Link to={"/singin"}>
-                <button
-                  type="button"
-                  class="m-2 text-azulito bg-white hover:bg-azulito hover:text-white transition ease-in-out delay-75 animate-fade-in-down text-2xl font-medium rounded-lg px-5 py-2.5 text-center mr-2 mb-2 md:w-[90%] h-1/2"
-                >
-                  ¿Aún no estás registrado?
-                  <h1 className="underline decoration-rojito"> Registrate</h1>
-                </button>
+                  <button
+                    type="button"
+                    class="m-2 text-azulito bg-white hover:bg-azulito hover:text-white transition ease-in-out delay-75 animate-fade-in-down text-2xl font-medium rounded-lg px-5 py-2.5 text-center mr-2 mb-2 md:w-[90%] h-1/2"
+                  >
+                    ¿Aún no estás registrado?
+                    <h1 className="underline decoration-rojito"> Registrate</h1>
+                  </button>
                 </Link>
               </div>
               <hr></hr>
