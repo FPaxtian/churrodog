@@ -286,9 +286,10 @@ const Account = () => {
                 />
               </div>
             )}
-            {address.map((data) => {
+            {/* {address.map((data) => {
               return <Address key={data._id} address={data} />;
-            })}
+            })} */}
+            <Address key={data._id} address="{data}" />
 
 
 
