@@ -1,5 +1,5 @@
 import React from 'react'
-import Product from './_product'
+// import Product from './_product'
 
 const FourthSection = () => {
 
@@ -17,10 +17,10 @@ const FourthSection = () => {
                 <div class="container mx-auto">
                     <div className="contenedor-padre w-full h-auto grid grid-cols-2 lg:grid-cols-4 ">
 
+                        {/* <Product key="" product="{data}" />
                         <Product key="" product="{data}" />
                         <Product key="" product="{data}" />
-                        <Product key="" product="{data}" />
-                        <Product key="" product="{data}" />
+                        <Product key="" product="{data}" /> */}
                         {/* <Product />
                         <Product />
                         <Product />
