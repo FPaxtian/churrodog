@@ -1,5 +1,5 @@
 import React from 'react'
-// import Product from './_product'
+import Product from './_product'
 
 const FourthSection = () => {
 
