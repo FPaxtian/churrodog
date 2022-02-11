@@ -3,10 +3,12 @@ import Swal from "sweetalert2";
 import LoginSelect from "../components/_loginSelect";
 import { getUserCurrent, updateUser, signOff } from '../api/auth'
 import Address from "../components/_address";
-
+import axios from "axios";
 const Account = () => {
   const status = "recibido";
   const [user, setUser] = useState('')
+  const [address, setAddress] = useState([])
+  const [loader, setLoader] = useState(true)
 
 
   useEffect(() => {
@@ -15,7 +17,7 @@ const Account = () => {
   const _getUserCurrent = async () => {
     const userCurrent = await getUserCurrent()
     setUser(userCurrent)
-
+    getAddressById(userCurrent._id)
   }
 
   const _updateUser = async (fullname, cellphone) => {
@@ -29,6 +31,21 @@ const Account = () => {
 
   const goToHome = () => {
     window.location.href = "/"
+  }
+
+  const getAddressById = async (user_id) => {
+    try {
+      await axios
+        .get(`api/v1/address/${user_id}`)
+        .then((res) => {
+          setAddress(res.data);
+          setLoader(false)
+          console.log(res.data);
+        })
+        .catch((error) => {
+          console.log("Error: ", error);
+        });
+    } catch (error) { }
   }
 
   const churroAlerOff = () => {
@@ -262,7 +279,18 @@ const Account = () => {
                 </button >
               </div>
             </div>
-            <Address />
+            {loader && (
+              <div className="w-full flex justify-center items-center content-center">
+                <img
+                  src={require("../assets/perroEsperando.gif")}
+                  alt="Funny image"
+                />
+              </div>
+            )}
+            {address.map((data) => {
+              return <Address key={data._id} address={data} />;
+            })}
+
 
 
           </div>
