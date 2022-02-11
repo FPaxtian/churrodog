@@ -24,7 +24,7 @@ const Navbar = () => {
             ["Nosotros", "/sobre-nosotros"],
             ["Blog", "/blog"],
             ["Contacto", "/contacto"],
-            ["Tienda en linea", "/productos"],
+            ["Tienda en linea", "/tienda-en-linea"],
             [<ion-icon style={{ fontSize: 35 }} name="cart-outline"></ion-icon>, "/carrito-compras"],
             [<ion-icon style={{ fontSize: 35 }} name="person-circle-outline"></ion-icon>, "/cuenta"],
 
