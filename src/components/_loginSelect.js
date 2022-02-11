@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const LoginSelect = () => {
   return (
@@ -14,7 +15,7 @@ const LoginSelect = () => {
             <hr></hr>
             <div class="  ">
               <div className="bg-transparent h-[40vh] w-[100%] text-center text-azulito  ">
-                <button to={"/login"}>
+                <Link to={"/iniciar-sesion"}>
                   <button
                     type="button"
                     class="m-2 text-azulito bg-white hover:bg-azulito hover:text-white transition ease-in-out delay-75 animate-fade-in-down font-medium rounded-lg text-2xl px-5 py-2.5 text-center mr-2 mb-2 md:w-[90%] h-1/2"
@@ -25,8 +26,8 @@ const LoginSelect = () => {
                       Inicia sesión
                     </h1>
                   </button>
-                </button >
-                <button to={"/singin"}>
+                </Link>
+                <Link to={"/registro"}>
                   <button
                     type="button"
                     class="m-2 text-azulito bg-white hover:bg-azulito hover:text-white transition ease-in-out delay-75 animate-fade-in-down text-2xl font-medium rounded-lg px-5 py-2.5 text-center mr-2 mb-2 md:w-[90%] h-1/2"
@@ -34,7 +35,7 @@ const LoginSelect = () => {
                     ¿Aún no estás registrado?
                     <h1 className="underline decoration-rojito"> Registrate</h1>
                   </button>
-                </button >
+                </Link>
               </div>
               <hr></hr>
 
