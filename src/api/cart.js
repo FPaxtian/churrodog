@@ -1,7 +1,6 @@
 import { PRODUCTS } from '../utils/constants'
 import axios from 'axios'
-import { uniqBy, countBy, map } from "lodash"
-import { data } from 'autoprefixer';
+import { uniqBy, countBy } from "lodash"
 
 const addProductCart = (idProduct) => {
     const products = getCartApi();
