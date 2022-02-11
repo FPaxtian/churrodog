@@ -289,7 +289,7 @@ const Account = () => {
             {/* {address.map((data) => {
               return <Address key={data._id} address={data} />;
             })} */}
-            <Address key={data._id} address="{data}" />
+            <Address key={1} address="{data}" />
 
 
 
