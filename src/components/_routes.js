@@ -7,7 +7,7 @@ import Contact from '../views/Contact'
 import Products from '../views/Products'
 import Account from '../views/Account'
 import Cart from '../views/Cart'
-// import Direction from '../views/Direction'
+import Direction from '../views/Direction'
 // import Payment from '../views/Payment'
 import Login from '../views/Login'
 import Singin from '../views/Singin'
@@ -32,6 +32,7 @@ const Rout = () => {
             <Route path="/cuenta" element={<Account />} />
             <Route path="/iniciar-sesion" element={<Login />} />
             <Route path="/registro" element={<Singin />} />
+            <Route path="/direcciones" element={<Direction />} />
         </Routes>
 
 

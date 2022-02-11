@@ -17,7 +17,6 @@ const Cart = () => {
 
   const getProducts = async () => {
     const productsCart = await getProductsCartApi()
-    console.log(productsCart);
     setProducts(productsCart)
     setLoader(false)
   }
@@ -81,7 +80,7 @@ const Cart = () => {
               </div>
               {/* boton para Pagar */}
               <div className="pedido bg-white w-full h-[15vh]  border-t-1 border-grisesitoFuertito flex justify-end items-center">
-                <Link to={"/direction-payment"}>
+                <Link to={"/direcciones"}>
                   <button className="bg-rojito lg:h-[5vh] lg:w-[10vw] hover:bg-rojitoSubidito duration-500 text-white font-semibold py-1 px-3 mx-10 my-2 md:px-10 md:mx-9 lg:py-1 lg:px-5 lg:mx-20 lg:my-0   rounded-full">
                     Pagar
                   </button>
