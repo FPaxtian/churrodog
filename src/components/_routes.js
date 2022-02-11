@@ -5,7 +5,7 @@ import About from '../views/About'
 import Blog from '../views/Blog'
 import Contact from '../views/Contact'
 import Products from '../views/Products'
-// import Account from '../views/Account'
+import Account from '../views/Account'
 import Cart from '../views/Cart'
 // import Direction from '../views/Direction'
 // import Payment from '../views/Payment'
@@ -29,6 +29,7 @@ const Rout = () => {
             <Route path="/blog" element={<Blog />} />
             <Route path="/contacto" element={<Contact />} />
             <Route path="/carrito-compras" element={<Cart />} />
+            <Route path="/cuenta" element={<Account />} />
         </Routes>
 
 

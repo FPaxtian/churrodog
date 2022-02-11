@@ -25,7 +25,7 @@ const Product = (props) => {
                 <div className=" lg:transform  lg:transition lg:duration-500 lg:hover:scale-110">
                     <img
                         src={require("../assets/SACO 20 KILOS.jpg")}
-                        className="imgProducto xl:h-auto lg:w-auto my-0  h-auto  rounded-lg  "
+                        className="imgProducto w-[100%] object-cover h-[45vh] rounded-lg"
                         alt="churrodog perro feliz"
                     ></img>
                 </div>
