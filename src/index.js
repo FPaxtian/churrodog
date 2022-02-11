@@ -4,8 +4,6 @@ import { BrowserRouter } from "react-router-dom";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import axios from 'axios'
-axios.defaults.baseURL = 'https://churro-dog-server-test.herokuapp.com/';
 
 ReactDOM.render(
   <BrowserRouter>
