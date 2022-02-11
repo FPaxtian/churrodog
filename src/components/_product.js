@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 import ReactModal from "react-modal";
-import { addProductCart } from "../api/cart";
+// import { addProductCart } from "../api/cart";
 
 const Product = (props) => {
     const [open, setOpen] = useState(false);
     const agregado = (idProduct) => {
         setOpen(false)
-        addProductCart(idProduct);
+        // addProductCart(idProduct);
         Swal.fire({
             title: "Articulo agregado :)",
             padding: "3em",
