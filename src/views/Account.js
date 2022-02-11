@@ -40,7 +40,6 @@ const Account = () => {
         .then((res) => {
           setAddress(res.data);
           setLoader(false)
-          console.log(res.data);
         })
         .catch((error) => {
           console.log("Error: ", error);
