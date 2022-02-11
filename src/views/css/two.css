@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.img1P{
+    width: 70%;
+}
+.perro-cover{
+    background-image: url('../../assets/fondo2.png');
+    backdrop-filter: blur(0px);
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center center;
+}
+

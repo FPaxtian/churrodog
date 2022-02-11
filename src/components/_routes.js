@@ -4,7 +4,7 @@ import Home from '../views/Home'
 import About from '../views/About'
 // import Blog from '../views/Blog'
 // import Contact from '../views/Contact'
-// import Products from '../views/Products'
+import Products from '../views/Products'
 // import Account from '../views/Account'
 // import Cart from '../views/Cart'
 // import Direction from '../views/Direction'
@@ -25,6 +25,7 @@ const Rout = () => {
         <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="/sobre-nosotros" element={<About />} />
+            <Route path="/tienda-en-linea" element={<Products />} />
         </Routes>
 
 
