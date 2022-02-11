@@ -6,27 +6,26 @@ import axios from "axios";
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [loader, setLoader] = useState(true);
-  const url = "https://churro-dog-server-test.herokuapp.com/"
-  useEffect(() => {
-    getProducts();
-  }, []);
+
+  // useEffect(() => {
+  //   getProducts();
+  // }, []);
 
 
 
-  const getProducts = async () => {
-    try {
-      console.log(`${url}api/v1/products/`);
-      await axios
-        .get(`${url}api/v1/products/`)
-        .then((res) => {
-          setProducts(res.data);
-          setLoader(false);
-        })
-        .catch((error) => {
-          console.log("Error: ", error);
-        });
-    } catch (error) { }
-  };
+  // const getProducts = async () => {
+  //   try {
+  //     await axios
+  //       .get(`api/v1/products/`)
+  //       .then((res) => {
+  //         setProducts(res.data);
+  //         setLoader(false);
+  //       })
+  //       .catch((error) => {
+  //         console.log("Error: ", error);
+  //       });
+  //   } catch (error) { }
+  // };
 
   return (
     <div className="contenedor padre bg-black w-auto h-auto">
