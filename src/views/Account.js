@@ -181,7 +181,7 @@ const Account = () => {
             <hr />
             <div className="flex mt-5 ">
               <div className="w-[50%] bg-white ">
-                <h1 className="lg:text-3xl 2xl:text-3xl mt-5 font-bold">
+                <h1 className="lg:text-3xl 2xl:text-3xl mt-5 font-bold text-azulito">
                   Pedidos
                 </h1>
               </div>

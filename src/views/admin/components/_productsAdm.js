@@ -24,11 +24,11 @@ const ProductAdm = (props) => {
   console.log("aqui van los datos", props.product);
   return (
     <div>
-      <div className=" contenedor-hijo relative shadow-2xl shadow-[rgb(176,176,176)] mx-3 my-3 lg:mx-10 lg:my-10 rounded-lg  w-[90%] h-[auto]  lg:w-[75%] xl:h-[45vh]  bg-white">
-        <div className=" lg:transform  lg:transition lg:duration-500 lg:hover:scale-110">
+      <div className=" contenedor-hijo bg-black relative shadow-2xl shadow-[rgb(176,176,176)] mx-3 my-3 lg:mx-10 lg:my-10 rounded-lg  w-[90%] h-[auto]  lg:w-[75%]  xl:h-[45vh]  bg-white">
+        <div className=" lg:transform  lg:transition lg:duration-500 lg:hover:scale-110 ">
           <img
             src={require("../../../assets/SACO 20 KILOS.jpg")}
-            className="imgProducto xl:h-auto lg:w-auto my-0  h-auto  rounded-lg  "
+            className="imgProducto w-[100%] object-cover h-[45vh] rounded-lg"
             alt="churrodog perro feliz"
           ></img>
         </div>
@@ -48,6 +48,7 @@ const ProductAdm = (props) => {
           </button>
         </div>
       </div>
+      
 
       <ReactModal
         isOpen={open}
@@ -82,8 +83,8 @@ const ProductAdm = (props) => {
             </div>
           </div>
           <div className="bg-white w-full h-2/6 md:w-[80%] md:h-full  ">
-            <form>
-              <div className="text-azulito p-5 md:mt-[40%]">
+            <form className="md:mt-[30%] lg:mt-[30%] 2xl:mt-[45%] ">
+              <div className="text-azulito p-5 ">
                 <input
                   type="file"
                   className=" border border-gray-600 rounded px-4 py-1 mb-3"

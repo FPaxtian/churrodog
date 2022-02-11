@@ -62,7 +62,7 @@ const BlogAdmin = () => {
   };
 
   return (
-    <div className="contenedor-padre bg-white w-auto h-[100vh]">
+    <div className="contenedor-padre bg-white w-auto h-auto">
       <div className="perro-cover w-auto h-[35rem] 2xl:w-[100%] bg-white "></div>
       {loader && (
         <div className="w-full flex justify-center items-center content-center">
