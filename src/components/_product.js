@@ -46,62 +46,7 @@ const Product = (props) => {
                 </div>
             </div>
 
-            <ReactModal
-                isOpen={open}
-                style={{
-                    overlay: {
-                        backdropFilter: "blur(2px)",
-                        backgroundColor: "rgba(255,255,255, 0.1)",
-                    },
-                }}
-                className="w-[100%] lg:w-[60%] h-auto md:h-[70vh] bg-white absolute top-[10%] md:top-[20%] lg:left-[20%] rounded-lg shadow-2xl shadow-[#CCCCCC] animate-fade-in-down"
-            >
-                <div
-                    onClick={() => setOpen(false)}
-                    className="text-3x1 absolute  right-8 top-8 cursor-pointer  "
-                >
-                    <ion-icon
-                        style={{ fontSize: 35, color: "black" }}
-                        name={"close"}
-                    ></ion-icon>
-                </div>
 
-                <div className="bg-white  h-full md:flex   ">
-                    <div className=" bg-white w-full h-4/6 md:h-full ">
-                        <div className="w-full h-full flex justify-center items-center">
-                            <div className="foto-contenedor w-[55%] md:w-[60%]  pt-12 ">
-                                <img
-                                    src={require("../assets/SACO 20 KILOS.jpg")}
-                                    className="img1 "
-                                    alt="churrodog perro feliz"
-                                ></img>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="bg-white w-full h-2/6 md:w-[80%] md:h-full  ">
-                        <div className="text-azulito p-5 md:mt-[40%]">
-                            <div className="font-bold text-xl md:text-2xl">
-                                <h1>{props.product.name}</h1>
-                            </div>
-                            <div className="text-sm w-[99%] text-left md:text-sm ">
-                                <p className="break-words py-1">{props.product.description}Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam </p>
-                            </div>
-                            <div className="text-xl">
-                                <h1>$ {props.product.price}</h1>
-                            </div>
-                            <div className="bg-white w-[100%] flex m-0">
-                                <button className="bg-rojito  hover:bg-rojitoSubidito duration-500 text-white font-semibold py-1 px-3 mx-10 my-2  md:my-4 md:px-5 md:mx-1 md:w-[50%]  rounded-full">
-                                    Comprar
-                                </button>
-                                <button onClick={() => agregado(props.product._id)} className="bg-azulito  hover:bg-rojitoSubidito duration-500 text-white font-semibold py-1 px-3 mx-10 my-2  md:my-4 md:px-5 md:mx-1 md:w-[50%]  rounded-full">
-                                    <ion-icon style={{ fontSize: 20 }} name="cart"></ion-icon>
-                                </button>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </ReactModal>
         </div>
     );
 };
