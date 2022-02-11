@@ -38,7 +38,7 @@ const Product = (props) => {
                         Ver producto
                     </button>
                     <button
-                        onClick={() => agregado(props.product._id)}
+                        onClick={() => { agregado(props.product._id) }}
                         className="bg-white text-azulito hover:text-rojitoSubidito duration-500 font-semibold  mx-3 my-2 md:px-0 md:mx-10 lg:py-0 lg:px-5 lg:mx-0 lg:my-0   rounded-full"
                     >
                         <ion-icon style={{ fontSize: 25 }} name="cart"></ion-icon>
