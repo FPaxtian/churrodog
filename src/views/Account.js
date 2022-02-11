@@ -17,7 +17,7 @@ const Account = () => {
   const _getUserCurrent = async () => {
     const userCurrent = await getUserCurrent()
     setUser(userCurrent)
-    getAddressById(userCurrent._id)
+    // getAddressById(userCurrent._id)
   }
 
   const _updateUser = async (fullname, cellphone) => {
@@ -33,19 +33,19 @@ const Account = () => {
     window.location.href = "/"
   }
 
-  const getAddressById = async (user_id) => {
-    try {
-      await axios
-        .get(`api/v1/address/${user_id}`)
-        .then((res) => {
-          setAddress(res.data);
-          setLoader(false)
-        })
-        .catch((error) => {
-          console.log("Error: ", error);
-        });
-    } catch (error) { }
-  }
+  // const getAddressById = async (user_id) => {
+  //   try {
+  //     await axios
+  //       .get(`api/v1/address/${user_id}`)
+  //       .then((res) => {
+  //         setAddress(res.data);
+  //         setLoader(false)
+  //       })
+  //       .catch((error) => {
+  //         console.log("Error: ", error);
+  //       });
+  //   } catch (error) { }
+  // }
 
   const churroAlerOff = () => {
     Swal.fire({
@@ -286,9 +286,9 @@ const Account = () => {
                 />
               </div>
             )}
-            {address.map((data) => {
+            {/* {address.map((data) => {
               return <Address key={data._id} address={data} />;
-            })}
+            })} */}
 
 
 
