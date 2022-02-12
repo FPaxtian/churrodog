@@ -63,7 +63,7 @@ const createAddress = async (props) => {
 
     const data = {
         street: calle,
-        suburb: calle,
+        suburb: colonia,
         num_home: numero,
         city: ciudad,
         cp: codigo,

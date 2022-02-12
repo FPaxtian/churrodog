@@ -87,11 +87,11 @@ const Direction = () => {
   const direccion = () => {
     Swal.fire({
       title: "Agrega una dirección",
-      html: `<input type="text" id="calle" class="swal2-input" placeholder="Calle">
-        <input type="text" id="numero" class="swal2-input" placeholder="Numero">
+      html: `<input type="text" id="calle" class="swal2-input" placeholder="Calle con numero de casa">
         <input type="text" id="colonia" class="swal2-input" placeholder="Colonia">
         <input type="text" id="codigo" class="swal2-input" placeholder="Codigo postal">
         <input type="text" id="ciudad" class="swal2-input" placeholder="Ciudad">
+        <input type="text" id="numero" class="swal2-input" placeholder="Estado">
         <input type="text" id="referencia" class="swal2-input" placeholder="Referencia">
         <input type="text" id="telefono" class="swal2-input" placeholder="Telefono de quien recibe">
         <input type="text" id="recibe" class="swal2-input" placeholder="Quien recibe">`,
@@ -208,6 +208,9 @@ const Direction = () => {
                       </li>
                       <li>
                         <h1>CP: {data.cp}</h1>
+                      </li>
+                      <li>
+                        <h1>Estado: {data.num_home}</h1>
                       </li>
                       <li>
                         <h1>Referencias: {data.reference} </h1>

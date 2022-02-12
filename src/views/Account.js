@@ -8,6 +8,7 @@ const Account = () => {
   const status = "recibido";
   const [user, setUser] = useState('')
   const [address, setAddress] = useState([])
+  const [orders, setOrders] = useState([])
   const [loader, setLoader] = useState(true)
 
 
@@ -18,6 +19,7 @@ const Account = () => {
     const userCurrent = await getUserCurrent()
     setUser(userCurrent)
     getAddressById(userCurrent._id)
+    getOrderById(userCurrent._id)
   }
 
   const _updateUser = async (fullname, cellphone) => {
@@ -40,6 +42,7 @@ const Account = () => {
         .then((res) => {
           setAddress(res.data);
           setLoader(false)
+          console.log(res.data);
         })
         .catch((error) => {
           console.log("Error: ", error);
@@ -47,6 +50,17 @@ const Account = () => {
     } catch (error) { }
   }
 
+  const getOrderById = async (user_id) => {
+    await axios
+      .get(`api/v1/order/${user_id}`)
+      .then((res) => {
+        setOrders(res.data)
+        // console.log(res.data);
+      })
+      .catch((error) => {
+        console.log("Error: ", error);
+      });
+  }
   const churroAlerOff = () => {
     Swal.fire({
       icon: 'info',
@@ -111,11 +125,11 @@ const Account = () => {
   const direccion = () => {
     Swal.fire({
       title: "Agrega una dirección",
-      html: `<input type="text" id="calle" class="swal2-input" placeholder="Calle">
-        <input type="text" id="numero" class="swal2-input" placeholder="Numero">
+      html: `<input type="text" id="calle" class="swal2-input" placeholder="Calle con numero de casa">
         <input type="text" id="colonia" class="swal2-input" placeholder="Colonia">
         <input type="text" id="codigo" class="swal2-input" placeholder="Codigo postal">
         <input type="text" id="ciudad" class="swal2-input" placeholder="Ciudad">
+        <input type="text" id="numero" class="swal2-input" placeholder="Estado">
         <input type="text" id="referencia" class="swal2-input" placeholder="Referencia">
         <input type="text" id="telefono" class="swal2-input" placeholder="Telefono de quien recibe">
         <input type="text" id="recibe" class="swal2-input" placeholder="Quien recibe">`,
@@ -224,65 +238,94 @@ const Account = () => {
                 </button>
               </div>
             </div>
-            <div class=" producto mt-10  lg:w-[100%] h-auto shadow-lg bg-grisesitoFuertito text-azulito text-lg  text-left p-2 lg:p-5 rounded-lg flex">
-              <div className="text-sm   bg-grisesitoFuertito w-[70%] h-auto p-0">
-                <ul className="p-5 leading-1">
-                  <li className="font-bold">
-                    Producto: <a className="font-normal	">ChurroDog 20kg </a>{" "}
-                  </li>
-                  <li className="font-bold">
-                    Cantidad:<a className="font-normal	">5</a>{" "}
-                  </li>
-                  <li className="font-bold">
-                    Dirección de envio:{" "}
-                    <a className="font-normal	">
-                      Allende #1503 col.Centro Coatzacoalcos
-                    </a>
-                  </li>
-                  <li className="font-bold">
-                    Numero de telefono:{" "}
-                    <a className="font-normal	">+52 921 132 5408</a>
-                  </li>
-                </ul>
-              </div>
-              <div className="bg-transparent w-[30%] lg:flex">
-                <div className="contenedor-padre bg-grisesitoFuertesito 2-full lg:w-full h-1/2 lg:h-auto grid grid-cols-1">
-                  <h1 className="text-center font-bold">Estatus</h1>
-                  <div className="text-center">
-                    {status == "recibido" ? (
-                      <button >
-                        <ion-icon
-                          className="text-lg"
-                          style={{ color: "green" }}
-                          name="checkmark-circle"
-                        ></ion-icon>
-                        <h1 className="text-center pb-10">Recibido</h1>
-                      </button >
-                    ) : status == "pendiente" ? (
-                      <button >
-                        <ion-icon
-                          className="text-lg"
-                          style={{ color: "red" }}
-                          name="alert-circle"
-                        ></ion-icon>
-                        <h1 className="text-center text-sm pb-10">
-                          En proceso
-                        </h1>
-                      </button >
-                    ) : (
-                      <button >
-                        <ion-icon
-                          className="text-lg"
-                          style={{ color: "#002360" }}
-                          name="airplane"
-                        ></ion-icon>
-                        <h1 className="text-center text-sm pb-10">Enviado</h1>
-                      </button >
-                    )}
+
+            {orders.map((data) => {
+              return <div class=" producto mt-10  lg:w-[100%] h-auto shadow-lg bg-grisesitoFuertito text-azulito text-lg  text-left p-2 lg:p-5 rounded-lg flex">
+                <div className="text-sm   bg-grisesitoFuertito w-[70%] h-auto p-0">
+                  <ul className="p-5 leading-1">
+                    {data.products_cart.map((data) => {
+                      return <div className="mb-2">
+                        <li className="font-bold">
+                          Producto: <a className="font-normal	"> {data.name} </a>{" "}
+                        </li>
+                        <li className="font-bold">
+                          Cantidad:<a className="font-normal	"> {data.quantity}</a>{" "}
+                        </li>
+                      </div>
+                    })}
+                    <li className="font-bold mb-3">
+                      Total:{" "}
+                      <a className="font-normal	">
+                        {data.amount}
+                      </a>
+                    </li>
+                    {address.map((addres) => {
+                      if (data.address_id === addres._id) {
+                        return <div>
+                          <li className="font-bold mb-2">
+                            Dirección de envio:{" "}
+                            <a className="font-normal">
+                              Calle {addres.street},{addres.suburb}, {addres.city}, {addres.num_home}
+                            </a>
+                          </li>
+                          <li className="font-bold mb-3">
+                            Codigo postal:{" "}
+                            <a className="font-normal	">{addres.cp}</a>
+                          </li>
+                          <li className="font-bold">
+                            Numero de telefono:{" "}
+                            <a className="font-normal	">+52 {addres.cellphone_recibe}</a>
+                          </li>
+                        </div>
+                      }
+
+                    })}
+
+
+                  </ul>
+                </div>
+                <div className="bg-transparent w-[30%] lg:flex">
+                  <div className="contenedor-padre bg-grisesitoFuertesito 2-full lg:w-full h-1/2 lg:h-auto grid grid-cols-1">
+                    <h1 className="text-center font-bold">Estatus</h1>
+                    <div className="text-center">
+                      {data.status == "0" ? (
+                        <button >
+                          <ion-icon
+                            className="text-lg"
+                            style={{ color: "red" }}
+                            name="alert-circle"
+                          ></ion-icon>
+                          <h1 className="text-center text-sm pb-10">
+                            En proceso
+                          </h1>
+                        </button >
+
+                      ) : status == "pendiente" ? (
+                        <button >
+                          <ion-icon
+                            className="text-lg"
+                            style={{ color: "green" }}
+                            name="checkmark-circle"
+                          ></ion-icon>
+                          <h1 className="text-center pb-10">Recibido</h1>
+                        </button >
+                      ) : (
+                        <button >
+                          <ion-icon
+                            className="text-lg"
+                            style={{ color: "#002360" }}
+                            name="airplane"
+                          ></ion-icon>
+                          <h1 className="text-center text-sm pb-10">Enviado</h1>
+                        </button >
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            })}
+
+
           </div>
           {/* direcciones */}
           <div class=" lg:w-[30%] h-full shadow-lg bg-grisesitoFuertito text-azulito text-lg  text-left p-2 lg:p-5 rounded-l-lg ">
@@ -325,6 +368,9 @@ const Account = () => {
                     </li>
                     <li className="font-bold">
                       Codigo postal <a className="font-normal	">{data.cp}</a>
+                    </li>
+                    <li className="font-bold">
+                      Estado <a className="font-normal	">{data.num_home}</a>
                     </li>
                     <li className="font-bold">
                       Numero de telefono:{" "}

@@ -5,6 +5,7 @@ import { getUserCurrent } from '../api/auth'
 import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const stripePromise = loadStripe('pk_test_51KSAXbFEmDqbbZ7hFFml1LrgnwQtRByQMH58rbVWkoi4K7xDjYXwdKCRtR75YIVRENAZ75fnNa8P0czF1qldqiyu001yhuf4t8');
 
@@ -42,6 +43,15 @@ const Payment = () => {
     const addresId = await getAddressApi()
     setIdAddress(addresId)
   }
+  const churroAlerSuccess = () => {
+    Swal.fire({
+      icon: 'success',
+      title: 'Churro pedido realizado con exito!!',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
+
 
   // const options = {
   //   // passing the client secret obtained from the server
@@ -49,7 +59,7 @@ const Payment = () => {
   // };
 
   const _createOrder = async (id, total, user_id, idAddress, products) => {
-    await createOrderApi({ id, total, user_id, idAddress, products, goToAccount })
+    await createOrderApi({ id, total, user_id, idAddress, products, goToAccount, churroAlerSuccess })
   }
 
   const goToAccount = () => {
