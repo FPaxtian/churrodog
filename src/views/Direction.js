@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
-import { getProductsCartApi, getTotalCartAPi, addIdAddressApi } from "../api/cart";
+import { getProductsCartApi, getTotalCartAPi, addIdAddressApi, getAddressApi } from "../api/cart";
 import { getUserCurrent, createAddress } from '../api/auth'
 import axios from "axios";
 const Direction = () => {
@@ -10,13 +10,14 @@ const Direction = () => {
   const [products, setProducts] = useState([])
   const [address, setAddress] = useState([])
   const [user, setUser] = useState('')
-  const [idAddress, setIdAddress] = useState('')
   const [loader, setLoader] = useState(true)
+  const [idAddress, setIdAddress] = useState('')
 
   useEffect(() => {
     getTotal()
     getProducts()
     _getUserCurrent()
+    getIdAddress()
   }, [])
 
   const _getUserCurrent = async () => {
@@ -49,6 +50,29 @@ const Direction = () => {
     const productsCart = await getProductsCartApi()
     setProducts(productsCart.length)
     // setLoader(false)
+  }
+
+  const getIdAddress = async () => {
+    const addresId = await getAddressApi()
+    setIdAddress(addresId)
+  }
+
+  const _addIdAddress = async (id_address) => {
+    addIdAddressApi(id_address)
+    getIdAddress()
+  }
+
+  const goToMetodPago = () => {
+    if (idAddress === null) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Faltan tus churro direccion',
+        showConfirmButton: false,
+        timer: 1500
+      })
+    } else {
+      window.location.href = "/metodo-de-pago"
+    }
   }
 
   const churroAlerSuccessAddress = () => {
@@ -166,7 +190,7 @@ const Direction = () => {
                       name="age"
                       value="30"
                       className="h-[3vh] w-[10%]"
-                      onClick={() => { addIdAddressApi(data._id) }}
+                      onClick={() => { _addIdAddress(data._id) }}
                     />
 
                     <ul className="text-azulito py-10">
@@ -228,11 +252,11 @@ const Direction = () => {
             </div>
           </div>
           <div className="pedido bg-transparent w-full h-[15vh]  border-t-1 border-grisesitoFuertito flex justify-center ">
-            <Link to={"/metodo-de-pago"}>
-              <button className="bg-rojito lg:h-[5vh] lg:w-[10vw] hover:bg-rojitoSubidito duration-500 text-white font-semibold py-1 px-3 mx-10 my-2 md:px-10 md:mx-9 lg:py-1 lg:px-5 lg:mx-20 lg:my-0   rounded-full">
-                Continuar
-              </button>
-            </Link>
+
+            <button onClick={() => goToMetodPago()} className="bg-rojito lg:h-[5vh] lg:w-[10vw] hover:bg-rojitoSubidito duration-500 text-white font-semibold py-1 px-3 mx-10 my-2 md:px-10 md:mx-9 lg:py-1 lg:px-5 lg:mx-20 lg:my-0   rounded-full">
+              Continuar
+            </button>
+
           </div>
         </div>
       </div>

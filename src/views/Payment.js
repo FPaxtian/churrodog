@@ -49,7 +49,11 @@ const Payment = () => {
   // };
 
   const _createOrder = async (id, total, user_id, idAddress, products) => {
-    await createOrderApi({ id, total, user_id, idAddress, products })
+    await createOrderApi({ id, total, user_id, idAddress, products, goToAccount })
+  }
+
+  const goToAccount = () => {
+    window.location.href = "/cuenta"
   }
 
   const CheckoutForm = () => {

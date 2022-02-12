@@ -104,16 +104,20 @@ const getAddressApi = async () => {
 }
 
 const createOrderApi = async (props) => {
-    const { id, total, user_id, idAddress, products } = props
+    const { id, total, user_id, idAddress, products, goToAccount } = props
     const data = { user_id: user_id, stripe_id: id, address_id: idAddress, amount: total, products_cart: products, status: "0" }
     axios
         .post(`api/v1/order/`, data)
         .then(res => {
             console.log(res.data);
+            goToAccount() && goToAccount()
         })
         .catch(error => {
             console.log('Error: ', error)
         });
+
+    localStorage.removeItem(ID_ADDRESS)
+    localStorage.removeItem(PRODUCTS)
 
 }
 export {
