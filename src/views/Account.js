@@ -112,8 +112,8 @@ const Account = () => {
     Swal.fire({
       title: "Agrega una dirección",
       html: `<input type="text" id="calle" class="swal2-input" placeholder="Calle">
-        <input type="text" id="colonia" class="swal2-input" placeholder="Colonia">
         <input type="text" id="numero" class="swal2-input" placeholder="Numero">
+        <input type="text" id="colonia" class="swal2-input" placeholder="Colonia">
         <input type="text" id="codigo" class="swal2-input" placeholder="Codigo postal">
         <input type="text" id="ciudad" class="swal2-input" placeholder="Ciudad">
         <input type="text" id="referencia" class="swal2-input" placeholder="Referencia">

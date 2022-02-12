@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { getProductsCartApi, getTotalCartAPi, addIdAddressApi } from "../api/cart";
-import { getUserCurrent } from '../api/auth'
+import { getUserCurrent, createAddress } from '../api/auth'
 import axios from "axios";
 const Direction = () => {
 
@@ -51,15 +51,26 @@ const Direction = () => {
     // setLoader(false)
   }
 
+  const churroAlerSuccessAddress = () => {
+    Swal.fire({
+      icon: 'success',
+      title: 'Churro direcion añadido con exito!!',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
+
   const direccion = () => {
     Swal.fire({
       title: "Agrega una dirección",
       html: `<input type="text" id="calle" class="swal2-input" placeholder="Calle">
-        <input type="text" id="colonia" class="swal2-input" placeholder="Colonia">
         <input type="text" id="numero" class="swal2-input" placeholder="Numero">
+        <input type="text" id="colonia" class="swal2-input" placeholder="Colonia">
         <input type="text" id="codigo" class="swal2-input" placeholder="Codigo postal">
-        <input type="text" id="referencia" class="swal2-input" placeholder="referencia">
-        <input type="text" id="telefono" class="swal2-input" placeholder="telefono">`,
+        <input type="text" id="ciudad" class="swal2-input" placeholder="Ciudad">
+        <input type="text" id="referencia" class="swal2-input" placeholder="Referencia">
+        <input type="text" id="telefono" class="swal2-input" placeholder="Telefono de quien recibe">
+        <input type="text" id="recibe" class="swal2-input" placeholder="Quien recibe">`,
       confirmButtonText: "Guardar",
       showCancelButton: true,
       cancelButtonText: "Cerrar",
@@ -70,17 +81,21 @@ const Direction = () => {
         const calle = Swal.getPopup().querySelector("#calle").value;
         const colonia = Swal.getPopup().querySelector("#colonia").value;
         const numero = Swal.getPopup().querySelector("#numero").value;
+        const ciudad = Swal.getPopup().querySelector("#ciudad").value;
         const codigo = Swal.getPopup().querySelector("#codigo").value;
         const referencia = Swal.getPopup().querySelector("#referencia").value;
         const telefono = Swal.getPopup().querySelector("#telefono").value;
+        const recibe = Swal.getPopup().querySelector("#recibe").value;
 
         if (
           !calle ||
           !colonia ||
           !numero ||
+          !ciudad ||
           !codigo ||
           !referencia ||
-          !telefono
+          !telefono ||
+          !recibe
         ) {
           Swal.showValidationMessage(`Escribe tu direccion`);
         }
@@ -88,23 +103,32 @@ const Direction = () => {
           calle: calle,
           colonia: colonia,
           numero: numero,
+          ciudad: ciudad,
           referencia: referencia,
           telefono: telefono,
+          codigo: codigo,
+          recibe: recibe
         };
       },
     }).then((result) => {
-      Swal.fire(
-        `
-          calle: ${result.value.calle}
-          colonia: ${result.value.colonia}
-          numero: ${result.value.Numero}
-          codigo postal: ${result.value.Codigo}
-          referencia: ${result.value.referencia}
-          telefono: ${result.value.telefono}
-        `.trim()
-      );
+
+      const calle = result.value.calle
+      const colonia = result.value.colonia
+      const numero = result.value.numero
+      const ciudad = result.value.ciudad
+      const codigo = result.value.codigo
+      const referencia = result.value.referencia
+      const telefono = result.value.telefono
+      const recibe = result.value.recibe
+      const user_id = user._id
+      _createAddress(calle, colonia, numero, ciudad, codigo, referencia, telefono, recibe, user_id)
+
     });
   };
+
+  const _createAddress = async (calle, colonia, numero, ciudad, codigo, referencia, telefono, recibe, user_id) => {
+    await createAddress({ calle, colonia, numero, ciudad, codigo, referencia, telefono, recibe, user_id, _getUserCurrent, churroAlerSuccessAddress })
+  }
 
   const direcciones = true;
   return (

@@ -78,7 +78,6 @@ const createAddress = async (props) => {
         .then(res => {
             _getUserCurrent() && _getUserCurrent()
             churroAlerSuccessAddress() && churroAlerSuccessAddress()
-            console.log(res.data);
         })
         .catch(error => {
             console.log('Error: ', error)
