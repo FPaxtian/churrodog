@@ -56,9 +56,38 @@ const getUserCurrent = () => {
 const addUserCurrent = (data) => {
     localStorage.setItem(USER, JSON.stringify(data))
 }
+
+const createAddress = async (props) => {
+    const { calle, colonia, numero, ciudad, codigo, referencia, telefono, recibe, user_id, _getUserCurrent, churroAlerSuccessAddress } = props
+
+
+    const data = {
+        street: calle,
+        suburb: calle,
+        num_home: numero,
+        city: ciudad,
+        cp: codigo,
+        recibe: recibe,
+        reference: referencia,
+        user_id: user_id,
+        cellphone_recibe: telefono
+    }
+
+    axios
+        .post(`api/v1/address`, data)
+        .then(res => {
+            _getUserCurrent() && _getUserCurrent()
+            churroAlerSuccessAddress() && churroAlerSuccessAddress()
+            console.log(res.data);
+        })
+        .catch(error => {
+            console.log('Error: ', error)
+        });
+}
 export {
     logInApi,
     getUserCurrent,
     updateUser,
-    signOff
+    signOff,
+    createAddress
 }

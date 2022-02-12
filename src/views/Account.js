@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import LoginSelect from "../components/_loginSelect";
-import { getUserCurrent, updateUser, signOff } from '../api/auth'
+import { getUserCurrent, updateUser, signOff, createAddress } from '../api/auth'
 import Address from "../components/_address";
 import axios from "axios";
 const Account = () => {
@@ -64,6 +64,16 @@ const Account = () => {
       timer: 1500
     })
   }
+
+  const churroAlerSuccessAddress = () => {
+    Swal.fire({
+      icon: 'success',
+      title: 'Churro direcion añadido con exito!!',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
+
   const editarUsuario = (user) => {
     Swal.fire({
       title: "Edita tus datos",
@@ -105,9 +115,10 @@ const Account = () => {
         <input type="text" id="colonia" class="swal2-input" placeholder="Colonia">
         <input type="text" id="numero" class="swal2-input" placeholder="Numero">
         <input type="text" id="codigo" class="swal2-input" placeholder="Codigo postal">
-        <input type="text" id="referencia" class="swal2-input" placeholder="referencia">
-        <input type="text" id="telefono" class="swal2-input" placeholder="telefono">
-        <input type="text" id="recibe" class="swal2-input" placeholder="quien recibe">`,
+        <input type="text" id="ciudad" class="swal2-input" placeholder="Ciudad">
+        <input type="text" id="referencia" class="swal2-input" placeholder="Referencia">
+        <input type="text" id="telefono" class="swal2-input" placeholder="Telefono de quien recibe">
+        <input type="text" id="recibe" class="swal2-input" placeholder="Quien recibe">`,
       confirmButtonText: "Guardar",
       showCancelButton: true,
       cancelButtonText: "Cerrar",
@@ -118,6 +129,7 @@ const Account = () => {
         const calle = Swal.getPopup().querySelector("#calle").value;
         const colonia = Swal.getPopup().querySelector("#colonia").value;
         const numero = Swal.getPopup().querySelector("#numero").value;
+        const ciudad = Swal.getPopup().querySelector("#ciudad").value;
         const codigo = Swal.getPopup().querySelector("#codigo").value;
         const referencia = Swal.getPopup().querySelector("#referencia").value;
         const telefono = Swal.getPopup().querySelector("#telefono").value;
@@ -127,6 +139,7 @@ const Account = () => {
           !calle ||
           !colonia ||
           !numero ||
+          !ciudad ||
           !codigo ||
           !referencia ||
           !telefono ||
@@ -138,6 +151,7 @@ const Account = () => {
           calle: calle,
           colonia: colonia,
           numero: numero,
+          ciudad: ciudad,
           referencia: referencia,
           telefono: telefono,
           codigo: codigo,
@@ -145,19 +159,25 @@ const Account = () => {
         };
       },
     }).then((result) => {
-      Swal.fire(
-        `
-          calle: ${result.value.calle}
-          colonia: ${result.value.colonia}
-          numero: ${result.value.numero}
-          codigo postal: ${result.value.codigo}
-          referencia: ${result.value.referencia}
-          telefono: ${result.value.telefono}
-          recibe: ${result.value.recibe}
-        `.trim()
-      );
+
+      const calle = result.value.calle
+      const colonia = result.value.colonia
+      const numero = result.value.numero
+      const ciudad = result.value.ciudad
+      const codigo = result.value.codigo
+      const referencia = result.value.referencia
+      const telefono = result.value.telefono
+      const recibe = result.value.recibe
+      const user_id = user._id
+      _createAddress(calle, colonia, numero, ciudad, codigo, referencia, telefono, recibe, user_id)
+
     });
   };
+
+
+  const _createAddress = async (calle, colonia, numero, ciudad, codigo, referencia, telefono, recibe, user_id) => {
+    await createAddress({ calle, colonia, numero, ciudad, codigo, referencia, telefono, recibe, user_id, _getUserCurrent, churroAlerSuccessAddress })
+  }
   return (
     <div className="bg-white ">
       {user.length === 0 ? (
