@@ -8,7 +8,7 @@ import Products from '../views/Products'
 import Account from '../views/Account'
 import Cart from '../views/Cart'
 import Direction from '../views/Direction'
-// import Payment from '../views/Payment'
+import Payment from '../views/Payment'
 import Login from '../views/Login'
 import Singin from '../views/Singin'
 // import DashboardAdmin from '../views/admin/views/DashboardAdmin'
@@ -33,6 +33,7 @@ const Rout = () => {
             <Route path="/iniciar-sesion" element={<Login />} />
             <Route path="/registro" element={<Singin />} />
             <Route path="/direcciones" element={<Direction />} />
+            <Route path="/metodo-de-pago" element={<Payment />} />
         </Routes>
 
 

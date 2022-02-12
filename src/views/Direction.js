@@ -228,7 +228,7 @@ const Direction = () => {
             </div>
           </div>
           <div className="pedido bg-transparent w-full h-[15vh]  border-t-1 border-grisesitoFuertito flex justify-center ">
-            <Link to={"/payment-method"}>
+            <Link to={"/metodo-de-pago"}>
               <button className="bg-rojito lg:h-[5vh] lg:w-[10vw] hover:bg-rojitoSubidito duration-500 text-white font-semibold py-1 px-3 mx-10 my-2 md:px-10 md:mx-9 lg:py-1 lg:px-5 lg:mx-20 lg:my-0   rounded-full">
                 Continuar
               </button>
