@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
-
+import {
+    Link
+} from "react-router-dom"
 const ProductCart = (props) => {
 
     return (
-        <div className="pedido bg-white w-full h-auto md:h-auto lg:h-[17vh]  border-y-4 border-grisesitoFuertito  grid md:grid-cols-4 lg:grid-cols-4 2xl:grid-cols-4">
+        <div className="pedido bg-white w-full h-auto md:h-auto  border-y-4 border-grisesitoFuertito  grid md:grid-cols-4 lg:grid-cols-4 2xl:grid-cols-4">
             <div className="pedido-card  bg-black w-full h-auto   col-span-2  text-azulito grid grid-cols-4">
                 <div className="pedido-foto bg-white w-full h-auto flex justify-center  items-center p-2">
                     <img
@@ -20,15 +22,15 @@ const ProductCart = (props) => {
                         </li>
                         <br></br>
                         <ul className="flex flex-row space-x-4 pb-0">
-                            <li className="font-normal text-sm text-[#ff141e]">
+                            <li className="font-normal text-sm text-[#ff141e] cursor-pointer">
                                 <a className="font-normal" onClick={() => props.deleteProduct(props.product._id)}>
                                     Eliminar
                                 </a>
                             </li>
                             <li className="font-normal text-sm ">
-                                <a href="/productos" className="font-normal	">
+                                <Link to="/tienda-en-linea" className="font-normal	">
                                     Seguir comprando
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </ul>

@@ -11,7 +11,7 @@ const Products = () => {
     getProducts();
   }, []);
 
- 
+
 
   const getProducts = async () => {
     try {
@@ -24,11 +24,11 @@ const Products = () => {
         .catch((error) => {
           console.log("Error: ", error);
         });
-    } catch (error) {}
+    } catch (error) { }
   };
 
   return (
-    <div className="contenedor padre bg-black w-auto h-auto">
+    <div className="contenedor padre bg-black w-auto h-auto mb-20">
       <div className="w-full h-[auto] bg-white mx-auto">
         <div className="p-10">
           <h1 className="text-xl lg:text-4xl 2xl:text-5xl 2xl:pl-44 text-left font-bold text-black">
@@ -50,7 +50,7 @@ const Products = () => {
             })}
           </div>
         </div>
-      
+
       </div>
     </div>
   );

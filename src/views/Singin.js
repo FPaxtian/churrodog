@@ -1,9 +1,14 @@
 import "./css/one.css";
 
 const Singin = () => {
+
+  const _sinGin = async () => {
+
+    alert("hola")
+  }
   return (
-    <div className="one  w-full h-[78vh] flex ">
-      <div className="bg-grisesito md:w-1/2 h-full hidden lg:block text-left p-20">
+    <div className="one  w-full h-auto flex ">
+      <div className="bg-white md:w-1/2 h-full hidden lg:block text-left p-20">
         <h1 className=" ml-[20%] font-bold text-azulito lg:text-4xl 2xl:text-6xl ">
           Hola humano!
         </h1>
@@ -20,17 +25,9 @@ const Singin = () => {
             <form className="mt-5 lg:mt-0">
               <label>
                 <input
-                  placeholder="Nombre"
+                  placeholder="Nombre completo"
                   type="text"
                   name="nombre"
-                  className="apearance-none block w-full  bg-white text-gray-700 border border-gray-200 rounded px-4 py-3 mb-3 lg:py-4 2xl:py-6 lg:px-4 lg:mb-3 leading-tight focus:outline-none focus:bg-white"
-                />
-              </label>
-              <label>
-                <input
-                  placeholder="Apellidos"
-                  type="text"
-                  name="apellidos"
                   className="apearance-none block w-full  bg-white text-gray-700 border border-gray-200 rounded px-4 py-3 mb-3 lg:py-4 2xl:py-6 lg:px-4 lg:mb-3 leading-tight focus:outline-none focus:bg-white"
                 />
               </label>
@@ -59,7 +56,9 @@ const Singin = () => {
                 />
               </label>
               <input
-                type="submit"
+                onClick={() => { _sinGin() }}
+                type="button"
+                value="Registrate"
                 className=" block w-full lg:w-full bg-azulito text-white rounded px-4 py-3 lg:py-4 2xl:lg:py-6 lg:px-4 lg:mb-3 lg:mt-10 cursor-pointer"
               />
 

@@ -24,7 +24,7 @@ const Home = () => {
     }, []);
 
     return (
-        <div className="one ">
+        <div className="one h-auto mb-20">
             {/* first section */}
             <FirstSection />
 

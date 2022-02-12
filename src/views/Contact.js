@@ -67,13 +67,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <div className="lg:w-[30%] bottom-0  lg:right-0 lg:right-40  lg:absolute 2xl:w-[30%]  2xl:right-0 2xl:right-60  2xl:absolute h-auto">
-        <img
-          src={require("../assets/oido.png")}
-          className="img1 "
-          alt="churrodog perro feliz"
-        ></img>
-      </div>
+
     </div>
   );
 };

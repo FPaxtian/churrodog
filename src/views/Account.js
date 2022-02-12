@@ -198,7 +198,7 @@ const Account = () => {
         <LoginSelect></LoginSelect>
       ) : (
 
-        <div class="grid grid-cols-1 lg:flex p-5 gap-4">
+        <div class="grid grid-cols-1 lg:flex p-5 gap-4 mb-20">
           <div class=" lg:w-[70%] h-full shadow-lg bg-white p-10 rounded-lg grid grid-cols-1">
             <div class=" lg:w-[70%] pt-5 h-[20vh]  bg-white text-azulito   text-left lg:p-10 ">
               <div className="mt-4 bg-white w-auto h-auto flex">

@@ -56,14 +56,14 @@ const Login = () => {
     console.log("user ", user);
   }
   return (
-    <div className="one  w-full h-[78vh] flex ">
-      <div className="bg-grisesito md:w-1/2 h-full hidden lg:block text-left p-20">
+    <div className="one  w-full h-auto flex ">
+      <div className=" md:w-1/2 h-full hidden lg:block text-left p-20">
         <h1 className=" ml-[20%] font-bold text-azulito lg:text-4xl 2xl:text-6xl ">
           Hola de nuevo!
         </h1>
         <img
           src={require("../assets/chihuahua.png")}
-          className="lg:w-[70%] 2xl:w-[50%] ml-[20%] "
+          className="lg:w-[50%] 2xl:w-[40%] mt-12 ml-[20%] "
           alt="churrodog perro feliz"
         ></img>
       </div>

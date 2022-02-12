@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const LoginSelect = () => {
   return (
-    <div className="bg-white w-full h-auto py-10">
+    <div className="bg-white w-full h-auto py-10 mb-20">
       <div className=" w-full h-full flex justify-center items-center content-center">
         <div className=" rounded-xl bg-transparent w-[80%] h-[auto] lg:w-[35%] lg:h-[80%] flex justify-center items-center content-center">
           <div class="max-w-2xl bg-gray-200   py-10 px-5 m-auto w-full mt-10 rounded-xl">
@@ -14,7 +14,7 @@ const LoginSelect = () => {
             </div>
             <hr></hr>
             <div class="  ">
-              <div className="bg-transparent h-[40vh] w-[100%] text-center text-azulito  ">
+              <div className="bg-transparent h-[40vh] w-[100%] text-center text-azulito mb-12 ">
                 <Link to={"/iniciar-sesion"}>
                   <button
                     type="button"
@@ -48,13 +48,7 @@ const LoginSelect = () => {
           </div>
         </div>
       </div>
-      <div className="lg:w-[30%] bottom-0  lg:right-0 lg:right-40  lg:absolute 2xl:w-[30%]  2xl:right-0 2xl:right-60  2xl:absolute h-auto">
-        <img
-          src={require("../assets/perroSaludo.png")}
-          className="img1 "
-          alt="churrodog perro feliz"
-        ></img>
-      </div>
+
     </div>
   );
 };
