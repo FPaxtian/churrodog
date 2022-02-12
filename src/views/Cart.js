@@ -59,7 +59,6 @@ const Cart = () => {
   }
 
   const validateUser = () => {
-    console.log(user);
     if (user === 0) {
       churroAlertNot()
       window.location.href = "/cuenta";

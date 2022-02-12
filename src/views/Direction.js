@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
-import { getProductsCartApi, getTotalCartAPi, getCartApi } from "../api/cart";
+import { getProductsCartApi, getTotalCartAPi, addIdAddressApi } from "../api/cart";
 import { getUserCurrent } from '../api/auth'
 import axios from "axios";
 const Direction = () => {
@@ -10,6 +10,7 @@ const Direction = () => {
   const [products, setProducts] = useState([])
   const [address, setAddress] = useState([])
   const [user, setUser] = useState('')
+  const [idAddress, setIdAddress] = useState('')
   const [loader, setLoader] = useState(true)
 
   useEffect(() => {
@@ -22,7 +23,6 @@ const Direction = () => {
     const userCurrent = await getUserCurrent()
     setUser(userCurrent)
     getAddressById(userCurrent._id)
-    console.log(userCurrent._id);
   }
 
   const getAddressById = async (user_id) => {
@@ -32,7 +32,6 @@ const Direction = () => {
         .then((res) => {
           setAddress(res.data);
           setLoader(false)
-          console.log(res.data);
         })
         .catch((error) => {
           console.log("Error: ", error);
@@ -143,26 +142,33 @@ const Direction = () => {
                       name="age"
                       value="30"
                       className="h-[3vh] w-[10%]"
+                      onClick={() => { addIdAddressApi(data._id) }}
                     />
 
                     <ul className="text-azulito py-10">
                       <li>
-                        <h1 className="text-2xl font-bold">Aquiles Serdán </h1>
+                        <h1 className="text-2xl font-bold">Calle: {data.street} </h1>
                       </li>
                       <li>
                         <h1>#1019</h1>
                       </li>
                       <li>
-                        <h1>Benito Juarez Norte</h1>
+                        <h1>Col: {data.suburb}</h1>
                       </li>
                       <li>
-                        <h1>Coatzacoalcos,Ver</h1>
+                        <h1>Ciudad: {data.city}</h1>
                       </li>
                       <li>
-                        <h1> Casa color azul con portón verde</h1>
+                        <h1>CP: {data.cp}</h1>
                       </li>
                       <li>
-                        <h1> +52 921 132 5408 </h1>
+                        <h1>Referencias: {data.reference} </h1>
+                      </li>
+                      <li>
+                        <h1>Numero de quien reciba: +52 {data.cellphone_recibe} </h1>
+                      </li>
+                      <li>
+                        <h1>Quien recibe: {data.recibe} </h1>
                       </li>
                     </ul>
                   </div>

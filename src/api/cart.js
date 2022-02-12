@@ -1,4 +1,4 @@
-import { PRODUCTS } from '../utils/constants'
+import { PRODUCTS, ID_ADDRESS } from '../utils/constants'
 import axios from 'axios'
 import { uniqBy, countBy } from "lodash"
 
@@ -93,11 +93,16 @@ const deleteProductCartApiById = async (idProduct) => {
 
     localStorage.setItem(PRODUCTS, JSON.stringify(products));
 }
+
+const addIdAddressApi = async (id_address) => {
+    localStorage.setItem(ID_ADDRESS, id_address);
+}
 export {
     addProductCart,
     getCartApi,
     getProductsCartApi,
     getTotalCartAPi,
     deleteAllProductCartApi,
-    deleteProductCartApiById
+    deleteProductCartApiById,
+    addIdAddressApi
 }
