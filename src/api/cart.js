@@ -97,6 +97,25 @@ const deleteProductCartApiById = async (idProduct) => {
 const addIdAddressApi = async (id_address) => {
     localStorage.setItem(ID_ADDRESS, id_address);
 }
+
+const getAddressApi = async () => {
+    const addres_id = localStorage.getItem(ID_ADDRESS);
+    return addres_id;
+}
+
+const createOrderApi = async (props) => {
+    const { id, total, user_id, idAddress, products } = props
+    const data = { user_id: user_id, stripe_id: id, address_id: idAddress, amount: total, products_cart: products, status: "0" }
+    axios
+        .post(`api/v1/order/`, data)
+        .then(res => {
+            console.log(res.data);
+        })
+        .catch(error => {
+            console.log('Error: ', error)
+        });
+
+}
 export {
     addProductCart,
     getCartApi,
@@ -104,5 +123,7 @@ export {
     getTotalCartAPi,
     deleteAllProductCartApi,
     deleteProductCartApiById,
-    addIdAddressApi
+    addIdAddressApi,
+    createOrderApi,
+    getAddressApi
 }

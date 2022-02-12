@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { getTotalCartAPi } from "../api/cart";
-import { Elements, CardElement, useStripe } from '@stripe/react-stripe-js';
+import { getTotalCartAPi, createOrderApi, getAddressApi, getProductsCartApi } from "../api/cart";
+import { getUserCurrent } from '../api/auth'
+import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
+import axios from "axios";
 
 const stripePromise = loadStripe('pk_test_51KSAXbFEmDqbbZ7hFFml1LrgnwQtRByQMH58rbVWkoi4K7xDjYXwdKCRtR75YIVRENAZ75fnNa8P0czF1qldqiyu001yhuf4t8');
 
@@ -10,14 +12,35 @@ const Payment = () => {
 
   const [tarjeta, setTarjeta] = useState(true);
   const [total, setTotal] = useState([])
+  const [products, setProducts] = useState([])
+  const [user, setUser] = useState('')
+  const [idAddress, setIdAddress] = useState('')
 
   useEffect(() => {
+    _getUserCurrent()
     getTotal()
+    getIdAddress()
+    getProducts()
   }, [])
+
+  const _getUserCurrent = async () => {
+    const userCurrent = await getUserCurrent()
+    setUser(userCurrent)
+  }
+
   const getTotal = async () => {
     const totalApi = await getTotalCartAPi()
     setTotal(totalApi)
+  }
 
+  const getProducts = async () => {
+    const productsCart = await getProductsCartApi()
+    setProducts(productsCart)
+  }
+
+  const getIdAddress = async () => {
+    const addresId = await getAddressApi()
+    setIdAddress(addresId)
   }
 
   // const options = {
@@ -25,12 +48,29 @@ const Payment = () => {
   //   clientSecret: '{{CLIENT_SECRET}}',
   // };
 
+  const _createOrder = async (id, total, user_id, idAddress, products) => {
+    await createOrderApi({ id, total, user_id, idAddress, products })
+  }
 
   const CheckoutForm = () => {
 
-    const handleSubmit = e => {
+    const stripe = useStripe();
+    const elements = useElements();
+
+    const handleSubmit = async e => {
       e.preventDefault(); //esto previene que el form se mande.
-      console.log('Form was submitted');
+      const { error, paymentMethod } = await stripe.createPaymentMethod({
+        type: 'card',
+        card: elements.getElement(CardElement),
+      })
+
+      if (!error) {
+        const { id } = paymentMethod
+        const user_id = user._id
+        _createOrder(id, total, user_id, idAddress, products)
+      } else {
+        console.log(error);
+      }
     };
 
     return <form onSubmit={handleSubmit}>

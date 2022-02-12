@@ -6,6 +6,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import axios from 'axios'
 axios.defaults.baseURL = 'https://churro-dog-server-test.herokuapp.com/';
+// axios.defaults.baseURL = 'http://localhost:4000/';
 
 ReactDOM.render(
   <BrowserRouter>
