@@ -69,133 +69,143 @@ const Direction = () => {
             {direcciones ? (
               <div className="p-5 md:p-10 md:px-28 lg:px-10">
                 <div className="direccion bg-grisesitoFuertito h-full flex items-center justify-center content-center my-2 rounded-xl">
-                  <a onClick={() => direccion()} className=" cursor-pointer" >
+                  <a onClick={() => direccion()} className=" cursor-pointer">
                     {" "}
                     <ion-icon
-                      style={{ fontSize: "3rem", color: "gray" ,padding:"10px"}}
+                      style={{
+                        fontSize: "3rem",
+                        color: "gray",
+                        padding: "10px",
+                      }}
                       name="add-circle-outline"
                     ></ion-icon>
                   </a>
                 </div>
                 <div className="direccion bg-grisesitoFuertito h-full flex items-center my-2 rounded-xl">
-                  <input
-                    type="radio"
-                    id="age1"
-                    name="age"
-                    value="30"
-                    className="h-[3vh] w-[10%]"
-                  />
+                  <div className="flex  items-center my-2 mx-4 w-[65%]">
+                    <input
+                      type="radio"
+                      id="age1"
+                      name="age"
+                      value="30"
+                      className="h-[3vh] w-[10%]"
+                    />
 
-                  <ul className="text-azulito py-10">
-                    <li>
-                      <h1 className="text-2xl font-bold">Aquiles Serdán </h1>
-                    </li>
-                    <li>
-                      <h1>#1019</h1>
-                    </li>
-                    <li>
-                      <h1>Benito Juarez Norte</h1>
-                    </li>
-                    <li>
-                      <h1>Coatzacoalcos,Ver</h1>
-                    </li>
-                    <li>
-                      <h1> Casa color azul con portón verde</h1>
-                    </li>
-                    <li>
-                      <h1> +52 921 132 5408 </h1>
-                    </li>
-                  </ul>
+                    <ul className="text-azulito py-10 px-2">
+                      <li>
+                        <h1 className="text-2xl font-bold">Aquiles Serdán </h1>
+                      </li>
+                      <li>
+                        <h1>#1019</h1>
+                      </li>
+                      <li>
+                        <h1>Benito Juarez Norte</h1>
+                      </li>
+                      <li>
+                        <h1>Coatzacoalcos,Ver</h1>
+                      </li>
+                      <li>
+                        <h1> Casa color azul con portón verde</h1>
+                      </li>
+                      <li>
+                        <h1> +52 921 132 5408 </h1>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className=" w-[20%] flex ">
+                    <button onClick={()=>direccion()} className="text-white w-[50%] flex justify-center text-xl text-azulito">
+                    <ion-icon name="create"></ion-icon>
+                    </button>
+                    <button className="text-white w-[50%] flex justify-center text-xl text-rojito">
+                      <ion-icon name="trash"></ion-icon>
+                    </button>
+                  
+                  </div>
                 </div>
                 <div className="direccion bg-grisesitoFuertito h-full flex items-center my-2 rounded-xl">
-                  <input
-                    type="radio"
-                    id="age1"
-                    name="age"
-                    value="30"
-                    className="h-[3vh] w-[10%]"
-                  />
+                  <div className="flex  items-center my-2 mx-4 w-[65%]">
+                    <input
+                      type="radio"
+                      id="age1"
+                      name="age"
+                      value="30"
+                      className="h-[3vh] w-[10%]"
+                    />
 
-                  <ul className="text-azulito py-10">
-                    <li>
-                      <h1 className="text-2xl font-bold">Aquiles Serdán </h1>
-                    </li>
-                    <li>
-                      <h1>#1019</h1>
-                    </li>
-                    <li>
-                      <h1>Benito Juarez Norte</h1>
-                    </li>
-                    <li>
-                      <h1>Coatzacoalcos,Ver</h1>
-                    </li>
-                    <li>
-                      <h1> Casa color azul con portón verde</h1>
-                    </li>
-                    <li>
-                      <h1> +52 921 132 5408 </h1>
-                    </li>
-                  </ul>
+                    <ul className="text-azulito py-10 px-2">
+                      <li>
+                        <h1 className="text-2xl font-bold">Aquiles Serdán </h1>
+                      </li>
+                      <li>
+                        <h1>#1019</h1>
+                      </li>
+                      <li>
+                        <h1>Benito Juarez Norte</h1>
+                      </li>
+                      <li>
+                        <h1>Coatzacoalcos,Ver</h1>
+                      </li>
+                      <li>
+                        <h1> Casa color azul con portón verde</h1>
+                      </li>
+                      <li>
+                        <h1> +52 921 132 5408 </h1>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className=" w-[20%] flex ">
+                    <button onClick={()=>direccion()} className="text-white w-[50%] flex justify-center text-xl text-azulito">
+                    <ion-icon name="create"></ion-icon>
+                    </button>
+                    <button className="text-white w-[50%] flex justify-center text-xl text-rojito">
+                      <ion-icon name="trash"></ion-icon>
+                    </button>
+                  
+                  </div>
                 </div>
                 <div className="direccion bg-grisesitoFuertito h-full flex items-center my-2 rounded-xl">
-                  <input
-                    type="radio"
-                    id="age1"
-                    name="age"
-                    value="30"
-                    className="h-[3vh] w-[10%]"
-                  />
+                  <div className="flex  items-center my-2 mx-4 w-[65%]">
+                    <input
+                      type="radio"
+                      id="age1"
+                      name="age"
+                      value="30"
+                      className="h-[3vh] w-[10%]"
+                    />
 
-                  <ul className="text-azulito py-10">
-                    <li>
-                      <h1 className="text-2xl font-bold">Aquiles Serdán </h1>
-                    </li>
-                    <li>
-                      <h1>#1019</h1>
-                    </li>
-                    <li>
-                      <h1>Benito Juarez Norte</h1>
-                    </li>
-                    <li>
-                      <h1>Coatzacoalcos,Ver</h1>
-                    </li>
-                    <li>
-                      <h1> Casa color azul con portón verde</h1>
-                    </li>
-                    <li>
-                      <h1> +52 921 132 5408 </h1>
-                    </li>
-                  </ul>
-                </div>
-                <div className="direccion bg-grisesitoFuertito h-full flex items-center my-2 rounded-xl">
-                  <input
-                    type="radio"
-                    id="age1"
-                    name="age"
-                    value="30"
-                    className="h-[3vh] w-[10%]"
-                  />
+                    <ul className="text-azulito py-10 px-2">
+                      <li>
+                        <h1 className="text-2xl font-bold">Aquiles Serdán </h1>
+                      </li>
+                      <li>
+                        <h1>#1019</h1>
+                      </li>
+                      <li>
+                        <h1>Benito Juarez Norte</h1>
+                      </li>
+                      <li>
+                        <h1>Coatzacoalcos,Ver</h1>
+                      </li>
+                      <li>
+                        <h1> Casa color azul con portón verde</h1>
+                      </li>
+                      <li>
+                        <h1> +52 921 132 5408 </h1>
+                      </li>
+                    </ul>
+                  </div>
 
-                  <ul className="text-azulito py-10">
-                    <li>
-                      <h1 className="text-2xl font-bold">Aquiles Serdán </h1>
-                    </li>
-                    <li>
-                      <h1>#1019</h1>
-                    </li>
-                    <li>
-                      <h1>Benito Juarez Norte</h1>
-                    </li>
-                    <li>
-                      <h1>Coatzacoalcos,Ver</h1>
-                    </li>
-                    <li>
-                      <h1> Casa color azul con portón verde</h1>
-                    </li>
-                    <li>
-                      <h1> +52 921 132 5408 </h1>
-                    </li>
-                  </ul>
+                  <div className=" w-[20%] flex ">
+                    <button onClick={()=>direccion()} className="text-white w-[50%] flex justify-center text-xl text-azulito">
+                    <ion-icon name="create"></ion-icon>
+                    </button>
+                    <button className="text-white w-[50%] flex justify-center text-xl text-rojito">
+                      <ion-icon name="trash"></ion-icon>
+                    </button>
+                  
+                  </div>
                 </div>
               </div>
             ) : (

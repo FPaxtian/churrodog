@@ -21,7 +21,7 @@ const ProductCart = (props) => {
                         <br></br>
                         <ul className="flex flex-row space-x-4 pb-0">
                             <li className="font-normal text-sm text-[#ff141e]">
-                                <a className="font-normal" onClick={() => props.deleteProduct(props.product._id)}>
+                                <a className="cursor-pointer font-normal" onClick={() => props.deleteProduct(props.product._id)}>
                                     Eliminar
                                 </a>
                             </li>
