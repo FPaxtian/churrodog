@@ -300,7 +300,7 @@ const Account = () => {
                           </h1>
                         </button >
 
-                      ) : status == "pendiente" ? (
+                      ) : data.status == "1" ? (
                         <button >
                           <ion-icon
                             className="text-lg"

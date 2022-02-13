@@ -13,7 +13,7 @@ import Login from '../views/Login'
 import Singin from '../views/Singin'
 import DashboardAdmin from '../views/admin/DashboardAdmin'
 // import ProductsAdmin from '../views/admin/views/ProductsAdmin'
-// import PedidosAdmin from '../views/admin/views/PedidosAdmin'
+import PedidosAdmin from '../views/admin/PedidosAdmin'
 import BlogAdmin from '../views/admin/BlogAdmin'
 import AccountAdmin from '../views/admin/AccountAdmin'
 
@@ -37,6 +37,7 @@ const Rout = () => {
             <Route path="/panel-de-control" element={<DashboardAdmin />} />
             <Route path="/panel-blog" element={<BlogAdmin />} />
             <Route path="/cuenta-admin" element={<AccountAdmin />} />
+            <Route path="/panel-pedidos" element={<PedidosAdmin />} />
         </Routes>
 
 

@@ -121,6 +121,20 @@ const createOrderApi = async (props) => {
     localStorage.removeItem(PRODUCTS)
 
 }
+
+const updateStatusOrder = async (props) => {
+    const { order_id, selectedOption, churroAlerSuccess, _getOrders } = props
+    const data = { status: selectedOption }
+    axios
+        .put(`api/v1/order/${order_id}`, data)
+        .then(res => {
+            _getOrders() && _getOrders()
+            churroAlerSuccess() && churroAlerSuccess()
+        })
+        .catch(error => {
+            console.log('Error: ', error)
+        });
+}
 export {
     addProductCart,
     getCartApi,
@@ -130,5 +144,6 @@ export {
     deleteProductCartApiById,
     addIdAddressApi,
     createOrderApi,
-    getAddressApi
+    getAddressApi,
+    updateStatusOrder
 }
