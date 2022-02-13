@@ -4,7 +4,7 @@ import axios from 'axios'
 
 const logInApi = async (props) => {
     try {
-        const { email, password, churroAlerError, churroAlerSuccess, goToHome } = props
+        const { email, password, churroAlerError, churroAlerSuccess, goToHome, goToDashboard } = props
         const data = { email: email, password: password }
         axios
             .post(`api/v1/auth`, data)
@@ -15,7 +15,8 @@ const logInApi = async (props) => {
                 } else {
                     churroAlerSuccess() && churroAlerSuccess()
                     addUserCurrent(res.data)
-                    goToHome() && goToHome()
+                    if (res.data.type_user === "1") goToDashboard() && goToDashboard()
+                    else goToHome() && goToHome()
                 }
             })
             .catch(error => {

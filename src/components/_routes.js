@@ -11,11 +11,11 @@ import Direction from '../views/Direction'
 import Payment from '../views/Payment'
 import Login from '../views/Login'
 import Singin from '../views/Singin'
-// import DashboardAdmin from '../views/admin/views/DashboardAdmin'
+import DashboardAdmin from '../views/admin/DashboardAdmin'
 // import ProductsAdmin from '../views/admin/views/ProductsAdmin'
 // import PedidosAdmin from '../views/admin/views/PedidosAdmin'
-// import BlogAdmin from '../views/admin/views/BlogAdmin'
-// import AccountAdmin from '../views/admin/views/AccountAdmin'
+import BlogAdmin from '../views/admin/BlogAdmin'
+import AccountAdmin from '../views/admin/AccountAdmin'
 
 
 const Rout = () => {
@@ -34,6 +34,9 @@ const Rout = () => {
             <Route path="/registro" element={<Singin />} />
             <Route path="/direcciones" element={<Direction />} />
             <Route path="/metodo-de-pago" element={<Payment />} />
+            <Route path="/panel-de-control" element={<DashboardAdmin />} />
+            <Route path="/panel-blog" element={<BlogAdmin />} />
+            <Route path="/cuenta-admin" element={<AccountAdmin />} />
         </Routes>
 
 

@@ -23,7 +23,7 @@ const Login = () => {
       })
     } else {
 
-      await logInApi({ email, password, churroAlerError, churroAlerSuccess, goToHome })
+      await logInApi({ email, password, churroAlerError, churroAlerSuccess, goToHome, goToDashboard })
 
     }
 
@@ -50,10 +50,13 @@ const Login = () => {
   const goToHome = () => {
     window.location.href = "/"
   }
+  const goToDashboard = () => {
+    window.location.href = "/panel-de-control"
+  }
+
 
   const _getCurrentUser = async () => {
     const user = await getUserCurrent()
-    console.log("user ", user);
   }
   return (
     <div className="one  w-full h-auto flex ">
