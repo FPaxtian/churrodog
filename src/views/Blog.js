@@ -7,10 +7,10 @@ const Blog = () => {
   const [loader, setLoader] = useState(true);
 
   useEffect(() => {
-    getStudents();
+    getArticles();
   }, []);
 
-  const getStudents = async () => {
+  const getArticles = async () => {
     try {
       await axios
         .get(`api/v1/articles/`)

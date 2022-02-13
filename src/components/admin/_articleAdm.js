@@ -2,6 +2,7 @@ import React from "react";
 import Swal from "sweetalert2";
 
 const ArticleAdmin = (props) => {
+
   const deleteConfirm = () => {
     Swal.fire({
       title: "¿Quieres eliminar este elemento?",
@@ -17,39 +18,39 @@ const ArticleAdmin = (props) => {
       }
     });
   };
-  const editarNota = () => {
-    Swal.fire({
-      title: "Edita una nota",
-      html: `<input type="text" id="titulo" class="swal2-input" placeholder="Titulo">
-      <textarea id="texto" style="height:auto!important" cols="23" class="swal2-input" rows="8" placeholder="Contenido"></textarea>`,
+  // const editarNota = () => {
+  //   Swal.fire({
+  //     title: "Edita una nota",
+  //     html: `<input type="text" id="titulo" class="swal2-input" placeholder="Titulo">
+  //     <textarea id="texto" style="height:auto!important" cols="23" class="swal2-input" rows="8" placeholder="Contenido"></textarea>`,
 
-      confirmButtonText: "Guardar",
-      showCancelButton: true,
-      cancelButtonText: "Cerrar",
-      focusConfirm: false,
-      confirmButtonColor: "#002360",
-      cancelButtonColor: "#ff141e",
-      preConfirm: () => {
-        const titulo = Swal.getPopup().querySelector("#titulo").value;
-        const texto = Swal.getPopup().querySelector("#texto").value;
+  //     confirmButtonText: "Guardar",
+  //     showCancelButton: true,
+  //     cancelButtonText: "Cerrar",
+  //     focusConfirm: false,
+  //     confirmButtonColor: "#002360",
+  //     cancelButtonColor: "#ff141e",
+  //     preConfirm: () => {
+  //       const titulo = Swal.getPopup().querySelector("#titulo").value;
+  //       const texto = Swal.getPopup().querySelector("#texto").value;
 
-        if (!titulo || !texto) {
-          Swal.showValidationMessage(`Llena los campos`);
-        }
-        return {
-          titulo: titulo,
-          texto: texto,
-        };
-      },
-    }).then((result) => {
-      Swal.fire(
-        `
-          Titulo: ${result.value.titulo}
-          texto: ${result.value.texto}
-        `.trim()
-      );
-    });
-  };
+  //       if (!titulo || !texto) {
+  //         Swal.showValidationMessage(`Llena los campos`);
+  //       }
+  //       return {
+  //         titulo: titulo,
+  //         texto: texto,
+  //       };
+  //     },
+  //   }).then((result) => {
+  //     Swal.fire(
+  //       `
+  //         Titulo: ${result.value.titulo}
+  //         texto: ${result.value.texto}
+  //       `.trim()
+  //     );
+  //   });
+  // };
   return (
     <div>
       <hr className="salto" />
@@ -69,12 +70,12 @@ const ArticleAdmin = (props) => {
         <div className=" md:w-[20%] h-auto">
           <div className="w-[100%] h-full grid justify-center content-center text-center ">
             <div className=" w-[100%]  text-center ">
-              <a onClick={()=>editarNota()} className="text-4xl lg:text-5xl cursor-pointer px-1 text-azulito">
+              <a onClick={() => props.edit(props)} className="text-4xl lg:text-5xl cursor-pointer px-1 text-azulito">
                 {" "}
                 <ion-icon name="create"></ion-icon>
               </a>
               <a
-                onClick={() => deleteConfirm()}
+                onClick={() => props.delete(props)}
                 className="text-4xl lg:text-5xl  cursor-pointer px-1 "
               >
                 {" "}
