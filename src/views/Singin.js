@@ -1,10 +1,54 @@
+import React, { useState } from 'react'
 import "./css/one.css";
+import { sinGinApi } from '../api/auth'
+import Swal from "sweetalert2";
 
 const Singin = () => {
 
-  const _sinGin = async () => {
+  const [fullName, setFullName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [cellphone, setCellphone] = useState('')
 
-    alert("hola")
+  const _sinGin = async () => {
+    if (email === "" || password === "" || fullName === "" || cellphone === "") {
+      churroAlertNotData()
+    } else {
+      await sinGinApi({ fullName, cellphone, email, password, churroAlerError, churroAlerSuccess, goToLogin })
+    }
+
+  }
+
+  const churroAlerSuccess = () => {
+    Swal.fire({
+      icon: 'success',
+      title: 'Bienvenido churro compañero!!',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
+
+  const churroAlerError = () => {
+    Swal.fire({
+      icon: 'error',
+      title: 'Ya churro existe el correo',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
+
+  const goToLogin = () => {
+    window.location.href = "/iniciar-sesion"
+  }
+
+
+  const churroAlertNotData = () => {
+    Swal.fire({
+      icon: 'error',
+      title: 'Faltan tus churro datos',
+      showConfirmButton: false,
+      timer: 1500
+    })
   }
   return (
     <div className="one  w-full h-auto flex ">
@@ -28,6 +72,7 @@ const Singin = () => {
                   placeholder="Nombre completo"
                   type="text"
                   name="nombre"
+                  onChange={data => setFullName(data.target.value)}
                   className="apearance-none block w-full  bg-white text-gray-700 border border-gray-200 rounded px-4 py-3 mb-3 lg:py-4 2xl:py-6 lg:px-4 lg:mb-3 leading-tight focus:outline-none focus:bg-white"
                 />
               </label>
@@ -36,6 +81,7 @@ const Singin = () => {
                   placeholder="Telefono"
                   type="text"
                   name="telefono"
+                  onChange={data => setCellphone(data.target.value)}
                   className="apearance-none block w-full  bg-white text-gray-700 border border-gray-200 rounded px-4 py-3 mb-3 lg:py-4 2xl:py-6 lg:px-4 lg:mb-3 leading-tight focus:outline-none focus:bg-white"
                 />
               </label>
@@ -44,6 +90,7 @@ const Singin = () => {
                   placeholder="Email"
                   type="email"
                   name="email"
+                  onChange={data => setEmail(data.target.value)}
                   className="apearance-none block w-full  bg-white text-gray-700 border border-gray-200 rounded px-4 py-3 mb-3 lg:py-4 2xl:py-6 lg:px-4 lg:mb-3 leading-tight focus:outline-none focus:bg-white"
                 />
               </label>
@@ -52,6 +99,7 @@ const Singin = () => {
                   placeholder="Contraseña"
                   type="password"
                   name="password"
+                  onChange={data => setPassword(data.target.value)}
                   className="apearance-none block w-full  bg-white text-gray-700 border border-gray-200 rounded px-4 py-3 mb-3 lg:py-4 2xl:py-6 lg:px-4 lg:mb-3 leading-tight focus:outline-none focus:bg-white"
                 />
               </label>

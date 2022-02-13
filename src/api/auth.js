@@ -26,6 +26,24 @@ const logInApi = async (props) => {
     }
 }
 
+const sinGinApi = async (props) => {
+    const { fullName, cellphone, email, password, churroAlerError, churroAlerSuccess, goToLogin } = props
+    const data = { fullName: fullName, email: email, password: password, cellphone: cellphone, type_user: "2" }
+    axios
+        .post(`api/v1/users`, data)
+        .then(res => {
+            console.log(res.data);
+            if (res.data.message === "Correo en uso") churroAlerError() && churroAlerError()
+            else {
+                churroAlerSuccess() && churroAlerSuccess()
+                goToLogin() && goToLogin()
+            }
+
+        })
+        .catch(error => {
+            console.log('Error: ', error)
+        });
+}
 const updateUser = (props) => {
     const { fullname, cellphone, user_id, _getUserCurrent, churroAlerSuccess } = props
     const data = { fullname: fullname, cellphone: cellphone }
@@ -88,5 +106,6 @@ export {
     getUserCurrent,
     updateUser,
     signOff,
-    createAddress
+    createAddress,
+    sinGinApi
 }
