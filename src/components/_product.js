@@ -23,11 +23,8 @@ const Product = (props) => {
         <div>
             <div className=" contenedor-hijo relative shadow-2xl shadow-[rgb(176,176,176)] mx-3 my-3 lg:mx-10 lg:my-10 rounded-lg  w-[90%] h-[auto]  lg:w-[75%] xl:h-[45vh]  bg-white">
                 <div className=" lg:transform  lg:transition lg:duration-500 lg:hover:scale-110">
-                    <img
-                        src={require("../assets/SACO 20 KILOS.jpg")}
-                        className="imgProducto w-[100%] object-cover h-[45vh] rounded-lg"
-                        alt="churrodog perro feliz"
-                    ></img>
+                    {props.product.img === "" ? <img src={require("../assets/SACO 20 KILOS.jpg")} className="imgProducto w-[100%] object-cover h-[45vh] rounded-lg" alt="churrodog perro feliz" ></img>
+                        : <img src={props.product.img} className="imgProducto w-[100%] object-cover h-[45vh] rounded-lg" alt={props.product.name} ></img>}
                 </div>
 
                 <div className="flex justify-between items-center w-full absolute bottom-0 text-white 2xl:text-xl text-sm lg:p-4 font-bold bg-white  rounded-lg">
@@ -70,11 +67,8 @@ const Product = (props) => {
                     <div className=" bg-white w-full h-4/6 md:h-full ">
                         <div className="w-full h-full flex justify-center items-center">
                             <div className="foto-contenedor w-[55%] md:w-[60%]  pt-12 ">
-                                <img
-                                    src={require("../assets/SACO 20 KILOS.jpg")}
-                                    className="img1 "
-                                    alt="churrodog perro feliz"
-                                ></img>
+                                {props.product.img === "" ? <img src={require("../assets/SACO 20 KILOS.jpg")} className="img1" alt="churrodog perro feliz" ></img>
+                                    : <img src={props.product.img} className="img1" alt={props.product.name} ></img>}
                             </div>
                         </div>
                     </div>
@@ -84,7 +78,7 @@ const Product = (props) => {
                                 <h1>{props.product.name}</h1>
                             </div>
                             <div className="text-sm w-[99%] text-left md:text-sm ">
-                                <p className="break-words py-1">{props.product.description}Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam </p>
+                                <p className="break-words py-4">{props.product.description}</p>
                             </div>
                             <div className="text-xl">
                                 <h1>$ {props.product.price}</h1>
