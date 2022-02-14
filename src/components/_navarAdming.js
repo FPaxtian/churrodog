@@ -23,7 +23,7 @@ const NavbarAdmin = () => {
             ["Panel de control", "/panel-de-control"],
             ["Blog", "/panel-blog"],
             ["Pedidos", "/panel-pedidos"],
-            ["Tu tienda", "/panel-pedidos"],
+            ["Tu tienda", "/panel-productos"],
             [<ion-icon style={{ fontSize: 35 }} name="person-circle-outline"></ion-icon>, "/cuenta-admin"],
 
           ].map(([title, url]) => (

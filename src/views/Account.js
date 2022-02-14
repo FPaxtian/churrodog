@@ -304,19 +304,20 @@ const Account = () => {
                         <button >
                           <ion-icon
                             className="text-lg"
-                            style={{ color: "green" }}
-                            name="checkmark-circle"
-                          ></ion-icon>
-                          <h1 className="text-center pb-10">Recibido</h1>
-                        </button >
-                      ) : (
-                        <button >
-                          <ion-icon
-                            className="text-lg"
                             style={{ color: "#002360" }}
                             name="airplane"
                           ></ion-icon>
                           <h1 className="text-center text-sm pb-10">Enviado</h1>
+                        </button >
+
+                      ) : (
+                        <button >
+                          <ion-icon
+                            className="text-lg"
+                            style={{ color: "green" }}
+                            name="checkmark-circle"
+                          ></ion-icon>
+                          <h1 className="text-center pb-10">Recibido</h1>
                         </button >
                       )}
                     </div>

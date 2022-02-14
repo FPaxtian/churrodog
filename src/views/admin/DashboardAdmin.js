@@ -44,7 +44,7 @@ const DashboardAdmin = () => {
           </Link>
         </div>
         <div className=" ">
-          <Link to={"/productsAdmin"}>
+          <Link to={"/panel-productos"}>
             <div className="bg-[#F9F9F9] font-semibold text-azulito text-2xl md:text-3xl  2xl:text-4xl hover:bg-azulito hover:text-white border-2 shadow-lg transition ease-in-out delay-75 animate-fade-in-down w-[90%] h-auto m-auto py-20 rounded-lg text-center mb-12">
               <div className="grid justify-center items-center mb-6">
                 <ion-icon name="bag-handle"></ion-icon>
@@ -54,7 +54,7 @@ const DashboardAdmin = () => {
           </Link>
         </div>
         <div className=" ">
-          <Link to={"/blogAdmin"}>
+          <Link to={"/panel-pedidos"}>
             <div className="bg-[#F9F9F9] font-semibold text-azulito text-2xl md:text-3xl  2xl:text-4xl hover:bg-azulito hover:text-white border-2 shadow-lg transition ease-in-out delay-75 animate-fade-in-down w-[90%] h-auto m-auto py-20 rounded-lg text-center mb-12">
               <div className="grid justify-center items-center mb-6">
                 <ion-icon name="file-tray"></ion-icon>
