@@ -7,13 +7,13 @@ const FourthSection = () => {
         <div className="contenedor ">
             <div className="w-full h-[auto] bg-white mx-auto">
                 <div className="p-10">
-                    <h1 className="text-xl lg:text-4xl 2xl:text-5xl text-left font-bold text-black">
+                    <h2 className="text-xl lg:text-4xl 2xl:text-5xl text-left font-bold text-black">
                         Nuestos productos
                         <a className="underline decoration-rojito">
                             {" "}
                             mejores calificados
                         </a>
-                    </h1>
+                    </h2>
                 </div>
                 <div class="container mx-auto">
                     <div className="contenedor-padre w-full h-auto grid grid-cols-2 lg:grid-cols-4 ">

@@ -31,7 +31,7 @@ const Blog = () => {
         <div className="w-full flex justify-center items-center content-center">
           <img
             src={require("../assets/perroEsperando.gif")}
-            alt="Funny image"
+            alt="Churro dog blog"
           />
         </div>
       )}

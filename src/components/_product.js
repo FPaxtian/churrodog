@@ -26,7 +26,7 @@ const Product = (props) => {
                     <img
                         src={require("../assets/SACO 20 KILOS.jpg")}
                         className="imgProducto xl:h-auto lg:w-auto my-0  h-auto  rounded-lg  "
-                        alt="churrodog perro feliz"
+                        alt="churrodog alimento producto"
                     ></img>
                 </div>
 
@@ -73,7 +73,7 @@ const Product = (props) => {
                                 <img
                                     src={require("../assets/SACO 20 KILOS.jpg")}
                                     className="img1 "
-                                    alt="churrodog perro feliz"
+                                    alt="churrodog perro alimento "
                                 ></img>
                             </div>
                         </div>
@@ -87,7 +87,7 @@ const Product = (props) => {
                                 <p className="break-words py-1">{props.product.description}Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam </p>
                             </div>
                             <div className="text-xl">
-                                <h1>$ {props.product.price}</h1>
+                                <h2>$ {props.product.price}</h2>
                             </div>
                             <div className="bg-white w-[100%] flex m-0">
                                 <button className="bg-rojito  hover:bg-rojitoSubidito duration-500 text-white font-semibold py-1 px-3 mx-10 my-2  md:my-4 md:px-5 md:mx-1 md:w-[50%]  rounded-full">

@@ -12,7 +12,7 @@ const Navbar = () => {
           <img
             src={require("../assets/logo.jpeg")}
             className="w-32"
-            alt='churro dog logo'
+            alt='churrodog logo alimento'
           ></img>
         </div>
         <div onClick={() => { setOpen(!open) }} className="text-3x1 absolute z-[2] right-8 top-8 cursor-pointer lg:hidden">

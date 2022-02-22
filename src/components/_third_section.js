@@ -9,7 +9,7 @@ const ThirdSection = () => {
                 <img
                     src={require("../assets/SACO 20 KILOS.jpg")}
                     className="imgProducto xl:h-auto lg:w-8/12 my-10  h-96 shadow-2xl shadow-[rgb(176,176,176)] rounded-lg "
-                    alt="churrodog perro feliz"
+                    alt="churrodog perro producto"
                 ></img>
             </div>
             <div className="w-full h-full bg-white flex content-center items-center p-10 justify-center">

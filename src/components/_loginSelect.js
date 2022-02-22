@@ -21,10 +21,10 @@ const LoginSelect = () => {
                     class="m-2 text-azulito bg-white hover:bg-azulito hover:text-white transition ease-in-out delay-75 animate-fade-in-down font-medium rounded-lg text-2xl px-5 py-2.5 text-center mr-2 mb-2 md:w-[90%] h-1/2"
                   >
                     ¿Ya eres churro cliente?
-                    <h1 className="underline decoration-rojito">
+                    <h2 className="underline decoration-rojito">
                       {" "}
                       Inicia sesión
-                    </h1>
+                    </h2>
                   </button>
                 </Link>
                 <Link to={"/singin"}>
@@ -33,7 +33,7 @@ const LoginSelect = () => {
                   class="m-2 text-azulito bg-white hover:bg-azulito hover:text-white transition ease-in-out delay-75 animate-fade-in-down text-2xl font-medium rounded-lg px-5 py-2.5 text-center mr-2 mb-2 md:w-[90%] h-1/2"
                 >
                   ¿Aún no estás registrado?
-                  <h1 className="underline decoration-rojito"> Registrate</h1>
+                  <h2 className="underline decoration-rojito"> Registrate</h2>
                 </button>
                 </Link>
               </div>

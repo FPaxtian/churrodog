@@ -14,14 +14,15 @@ const Carouselx = () => {
       >
         <div>
           <img
+          alt="churrodog datos"
             className="h-auto"
             src="https://images.pexels.com/photos/3114143/pexels-photo-3114143.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
           />
           <div className="legend">
             <div className="p-5 py-36 md:mt-20 lg:mt-0 md:p-10">
-              <h1 className="text-sm w-full md:text-4xl lg:text-5xl  lgw-[70%]">
+              <h2 className="text-sm w-full md:text-4xl lg:text-5xl  lgw-[70%]">
                 Te interesaria saber mas sobre temas interesantes?
-              </h1>
+              </h2>
               <button className="bg-rojito hover:bg-rojitoSubidito text-white font-semibold  md:w-[20%] md:h-[5vh] text-center rounded-full mt-5 md:mt-10  md:text-md p-1">
                 <a href="https://open.spotify.com/">Ver articulo</a>
               </button>
@@ -30,14 +31,15 @@ const Carouselx = () => {
         </div>
         <div>
           <img
+          alt="churrodog datos"
             className="h-auto"
             src="https://images.pexels.com/photos/1289905/pexels-photo-1289905.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
           />
           <div className="legend">
             <div className="p-5 py-36 md:mt-20 lg:mt-0 md:p-10">
-              <h1 className="text-sm w-full md:text-4xl lg:text-5xl lgw-[70%]">
+              <h2 className="text-sm w-full md:text-4xl lg:text-5xl lgw-[70%]">
                 Te interesaria saber mas sobre temas interesantes?
-              </h1>
+              </h2>
               <button className="bg-rojito hover:bg-rojitoSubidito text-white font-semibold  md:w-[20%] md:h-[5vh] text-center rounded-full mt-5 md:mt-10  md:text-md p-1">
                 <a href="https://open.spotify.com/">Ver articulo</a>
               </button>
@@ -46,14 +48,15 @@ const Carouselx = () => {
         </div>
         <div>
           <img
+          alt="churrodog datos"
             className="h-auto"
             src="https://images.pexels.com/photos/10361808/pexels-photo-10361808.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
           />
           <div className="legend">
             <div className="p-5 py-36 md:mt-20 lg:mt-0 md:p-10">
-              <h1 className="text-sm w-full md:text-4xl lg:text-5xl  lgw-[70%]">
+              <h2 className="text-sm w-full md:text-4xl lg:text-5xl  lgw-[70%]">
                 Te interesaria saber mas sobre temas interesantes?
-              </h1>
+              </h2>
               <button className="bg-rojito hover:bg-rojitoSubidito text-white font-semibold  md:w-[20%] md:h-[5vh] text-center rounded-full mt-5 md:mt-10  md:text-md p-1">
                 <a href="https://open.spotify.com/">Ver articulo</a>
               </button>

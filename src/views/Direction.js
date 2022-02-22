@@ -63,9 +63,9 @@ const Direction = () => {
       <div className=" w-full h-full lg:w-[70%] lg:flex  ">
         <div className="w-[100%] h-full lg:w-[70%] lg:h-full  ">
           <div className="contenedor-hijo-titulo w-full lg:w-[100%] h-auto bg-white ">
-            <h1 className=" text-2xl lg:text-3xl 2xl:text-3xl pt-5 text-azulito underline decoration-rojito p-3">
+            <h2 className=" text-2xl lg:text-3xl 2xl:text-3xl pt-5 text-azulito underline decoration-rojito p-3">
               Mis direcciones
-            </h1>
+            </h2>
             {direcciones ? (
               <div className="p-5 md:p-10 md:px-28 lg:px-10">
                 <div className="direccion bg-grisesitoFuertito h-full flex items-center justify-center content-center my-2 rounded-xl">
@@ -88,52 +88,22 @@ const Direction = () => {
 
                   <ul className="text-azulito py-10">
                     <li>
-                      <h1 className="text-2xl font-bold">Aquiles Serdán </h1>
+                      <h2 className="text-2xl font-bold">Aquiles Serdán </h2>
                     </li>
                     <li>
-                      <h1>#1019</h1>
+                      <h2>#1019</h2>
                     </li>
                     <li>
-                      <h1>Benito Juarez Norte</h1>
+                      <h2>Benito Juarez Norte</h2>
                     </li>
                     <li>
-                      <h1>Coatzacoalcos,Ver</h1>
+                      <h2>Coatzacoalcos,Ver</h2>
                     </li>
                     <li>
-                      <h1> Casa color azul con portón verde</h1>
+                      <h2> Casa color azul con portón verde</h2>
                     </li>
                     <li>
-                      <h1> +52 921 132 5408 </h1>
-                    </li>
-                  </ul>
-                </div>
-                <div className="direccion bg-grisesitoFuertito h-full flex items-center my-2 rounded-xl">
-                  <input
-                    type="radio"
-                    id="age1"
-                    name="age"
-                    value="30"
-                    className="h-[3vh] w-[10%]"
-                  />
-
-                  <ul className="text-azulito py-10">
-                    <li>
-                      <h1 className="text-2xl font-bold">Aquiles Serdán </h1>
-                    </li>
-                    <li>
-                      <h1>#1019</h1>
-                    </li>
-                    <li>
-                      <h1>Benito Juarez Norte</h1>
-                    </li>
-                    <li>
-                      <h1>Coatzacoalcos,Ver</h1>
-                    </li>
-                    <li>
-                      <h1> Casa color azul con portón verde</h1>
-                    </li>
-                    <li>
-                      <h1> +52 921 132 5408 </h1>
+                      <h2> +52 921 132 5408 </h2>
                     </li>
                   </ul>
                 </div>
@@ -148,22 +118,22 @@ const Direction = () => {
 
                   <ul className="text-azulito py-10">
                     <li>
-                      <h1 className="text-2xl font-bold">Aquiles Serdán </h1>
+                      <h2 className="text-2xl font-bold">Aquiles Serdán </h2>
                     </li>
                     <li>
-                      <h1>#1019</h1>
+                      <h2>#1019</h2>
                     </li>
                     <li>
-                      <h1>Benito Juarez Norte</h1>
+                      <h2>Benito Juarez Norte</h2>
                     </li>
                     <li>
-                      <h1>Coatzacoalcos,Ver</h1>
+                      <h2>Coatzacoalcos,Ver</h2>
                     </li>
                     <li>
-                      <h1> Casa color azul con portón verde</h1>
+                      <h2> Casa color azul con portón verde</h2>
                     </li>
                     <li>
-                      <h1> +52 921 132 5408 </h1>
+                      <h2> +52 921 132 5408 </h2>
                     </li>
                   </ul>
                 </div>
@@ -178,22 +148,52 @@ const Direction = () => {
 
                   <ul className="text-azulito py-10">
                     <li>
-                      <h1 className="text-2xl font-bold">Aquiles Serdán </h1>
+                      <h2 className="text-2xl font-bold">Aquiles Serdán </h2>
                     </li>
                     <li>
-                      <h1>#1019</h1>
+                      <h2>#1019</h2>
                     </li>
                     <li>
-                      <h1>Benito Juarez Norte</h1>
+                      <h2>Benito Juarez Norte</h2>
                     </li>
                     <li>
-                      <h1>Coatzacoalcos,Ver</h1>
+                      <h2>Coatzacoalcos,Ver</h2>
                     </li>
                     <li>
-                      <h1> Casa color azul con portón verde</h1>
+                      <h2> Casa color azul con portón verde</h2>
                     </li>
                     <li>
-                      <h1> +52 921 132 5408 </h1>
+                      <h2> +52 921 132 5408 </h2>
+                    </li>
+                  </ul>
+                </div>
+                <div className="direccion bg-grisesitoFuertito h-full flex items-center my-2 rounded-xl">
+                  <input
+                    type="radio"
+                    id="age1"
+                    name="age"
+                    value="30"
+                    className="h-[3vh] w-[10%]"
+                  />
+
+                  <ul className="text-azulito py-10">
+                    <li>
+                      <h2 className="text-2xl font-bold">Aquiles Serdán </h2>
+                    </li>
+                    <li>
+                      <h2>#1019</h2>
+                    </li>
+                    <li>
+                      <h2>Benito Juarez Norte</h2>
+                    </li>
+                    <li>
+                      <h2>Coatzacoalcos,Ver</h2>
+                    </li>
+                    <li>
+                      <h2> Casa color azul con portón verde</h2>
+                    </li>
+                    <li>
+                      <h2> +52 921 132 5408 </h2>
                     </li>
                   </ul>
                 </div>
@@ -202,9 +202,9 @@ const Direction = () => {
               <div>
                 <div className="pedido flex justify-center items-center bg-white w-full h-[17vh] border-t-4 border-grisesitoFuertito text-center text-2xl">
                   <a onClick={() => direccion()} className=" cursor-pointer">
-                    <h1 className="p-5">
+                    <h2 className="p-5">
                       Parece que aún no tienes direcciones, agrega una.
-                    </h1>
+                    </h2>
                     <ion-icon
                       style={{ fontSize: "3rem", color: "gray" }}
                       name="add-circle-outline"
@@ -217,12 +217,12 @@ const Direction = () => {
         </div>
         <div className="bg-grisesitoFuertito w-[100%] h-auto lg:w-[30%] lg:h-[70vh]  ">
           <div className="productos-total p-10">
-            <h1 className="font-bold text-xl">Resumen de la compra</h1>
+            <h2 className="font-bold text-xl">Resumen de la compra</h2>
             <hr></hr>
-            <h1 className="py-5 font-medium">Productos :(2)</h1>
+            <h2 className="py-5 font-medium">Productos :(2)</h2>
             <div className="flex">
-              <h1 className=" font-medium">Total :</h1>
-              <h1 className="text-right ">$1293</h1>
+              <h2 className=" font-medium">Total :</h2>
+              <h2 className="text-right ">$1293</h2>
             </div>
           </div>
           <div className="pedido bg-transparent w-full h-[15vh]  border-t-1 border-grisesitoFuertito flex justify-center ">

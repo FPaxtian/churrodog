@@ -62,19 +62,19 @@ const Login = () => {
   return (
     <div className="one  w-full h-[78vh] flex ">
       <div className="bg-grisesito md:w-1/2 h-full hidden lg:block text-left p-20">
-        <h1 className=" ml-[20%] font-bold text-azulito lg:text-4xl 2xl:text-6xl ">
+        <h2 className=" ml-[20%] font-bold text-azulito lg:text-4xl 2xl:text-6xl ">
           Hola de nuevo!
-        </h1>
+        </h2>
         <img
           src={require("../assets/chihuahua.png")}
           className="lg:w-[70%] 2xl:w-[50%] ml-[20%] "
-          alt="churrodog perro feliz"
+          alt="churrodog login"
         ></img>
       </div>
       <div className="bg-white w-screen lg:w-1/2 h-full  ">
         <div className=" w-full h-full flex  justify-center items-center lg:inline ">
           <div className="lg:m-20   w-[90%] lg:w-[60%] 2xl:w-[50%] h-[80%] p-10  ">
-            <h1 className="text-4xl font-semibold md:py-10 ">Bienvenido churro amigo</h1>
+            <h2 className="text-4xl font-semibold md:py-10 ">Bienvenido churro amigo</h2>
             <form className="mt-10 lg:mt-1">
               <label>
                 <input

@@ -52,9 +52,9 @@ const Cart = () => {
     <div className="contenedor w-full h-full bg-grisesitoFuertito lg:flex lg:justify-center lg:content-center lg:p-10">
       <div className="contenedor-padre w-full lg:w-[60%] h-auto bg-grisesitoFuertito ">
         <div className="contenedor-hijo-titulo w-full lg:w-[100%] h-auto bg-white ">
-          <h1 className=" text-2xl lg:text-3xl 2xl:text-3xl mt-5 text-azulito underline decoration-rojito p-3">
+          <h2 className=" text-2xl lg:text-3xl 2xl:text-3xl mt-5 text-azulito underline decoration-rojito p-3">
             Carrito
-          </h1>
+          </h2>
           {loader && (
             <div className="w-full flex justify-center items-center content-center">
               <img
@@ -75,9 +75,9 @@ const Cart = () => {
               })}
 
               <div className="pedido bg-white w-full h-auto  order border-y-4 border-grisesitoFuertito flex justify-end items-center">
-                <h1 className=" p-5  lg:p-10 font-bold text-2xl text-azulito">
+                <h2 className=" p-5  lg:p-10 font-bold text-2xl text-azulito">
                   Total: {"$"}{total}
-                </h1>
+                </h2>
               </div>
               {/* boton para Pagar */}
               <div className="pedido bg-white w-full h-[15vh]  border-t-1 border-grisesitoFuertito flex justify-end items-center">

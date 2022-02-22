@@ -155,7 +155,7 @@ const Account = () => {
           <div class=" lg:w-[70%] h-full shadow-lg bg-white p-10 rounded-lg grid grid-cols-1">
             <div class=" lg:w-[70%] pt-5 h-[20vh]  bg-white text-azulito   text-left lg:p-10 ">
               <div className="mt-4 bg-white w-auto h-auto flex">
-                <h1 className="font-bold 2xl:text-3xl">{user.fullname}</h1>
+                <h2 className="font-bold 2xl:text-3xl">{user.fullname}</h2>
                 <Link onClick={() => editarUsuario(user)}>
                   <ion-icon
                     className="text-2xl"
@@ -181,9 +181,9 @@ const Account = () => {
             <hr />
             <div className="flex mt-5 ">
               <div className="w-[50%] bg-white ">
-                <h1 className="lg:text-3xl 2xl:text-3xl mt-5 font-bold">
+                <h2 className="lg:text-3xl 2xl:text-3xl mt-5 font-bold">
                   Pedidos
-                </h1>
+                </h2>
               </div>
               <div className="w-[50%] lg:h-[4vh] bg-white flex  justify-end ">
                 <button onClick={() => _signOff()} className="text-sm lg:text-2xl bg-rojito hover:bg-rojitoSubidito duration-500 text-white font-semibold py-0 px-3 mx-1 my-2 md:px-10 md:mx-9 lg:pb-9 lg:px-5 lg:mx-2 lg:my-0   rounded-full">
@@ -214,7 +214,7 @@ const Account = () => {
               </div>
               <div className="bg-transparent w-[30%] lg:flex">
                 <div className="contenedor-padre bg-grisesitoFuertesito 2-full lg:w-full h-1/2 lg:h-auto grid grid-cols-1">
-                  <h1 className="text-center font-bold">Estatus</h1>
+                  <h2 className="text-center font-bold">Estatus</h2>
                   <div className="text-center">
                     {status == "recibido" ? (
                       <Link>
@@ -223,7 +223,7 @@ const Account = () => {
                           style={{ color: "green" }}
                           name="checkmark-circle"
                         ></ion-icon>
-                        <h1 className="text-center pb-10">Recibido</h1>
+                        <h2 className="text-center pb-10">Recibido</h2>
                       </Link>
                     ) : status == "pendiente" ? (
                       <Link>
@@ -232,9 +232,9 @@ const Account = () => {
                           style={{ color: "red" }}
                           name="alert-circle"
                         ></ion-icon>
-                        <h1 className="text-center text-sm pb-10">
+                        <h2 className="text-center text-sm pb-10">
                           En proceso
-                        </h1>
+                        </h2>
                       </Link>
                     ) : (
                       <Link>
@@ -243,7 +243,7 @@ const Account = () => {
                           style={{ color: "#002360" }}
                           name="airplane"
                         ></ion-icon>
-                        <h1 className="text-center text-sm pb-10">Enviado</h1>
+                        <h2 className="text-center text-sm pb-10">Enviado</h2>
                       </Link>
                     )}
                   </div>
@@ -255,9 +255,9 @@ const Account = () => {
           <div class=" lg:w-[30%] h-full shadow-lg bg-grisesitoFuertito text-azulito text-lg  text-left p-2 lg:p-5 rounded-l-lg ">
             <div className="flex mt-5 ">
               <div className="w-[50%] bg-white rounded-l-lg">
-                <h1 className=" text-2xl lg:text-3xl 2xl:text-3xl mt-5 font-bold p-3">
+                <h2 className=" text-2xl lg:text-3xl 2xl:text-3xl mt-5 font-bold p-3">
                   Tus direcciones
-                </h1>
+                </h2>
               </div>
               <div className="w-[50%] h-auto bg-white flex justify-end p-8 text-3xl rounded-r-lg">
                 <Link onClick={() => direccion()}>

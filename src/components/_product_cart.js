@@ -9,7 +9,7 @@ const ProductCart = (props) => {
                     <img
                         src={require("../assets/SACO 20 KILOS.jpg")}
                         className="img1 object-cover h-[80%] "
-                        alt="churrodog perro feliz"
+                        alt="churrodog alimento perro"
                     ></img>
                 </div>
 

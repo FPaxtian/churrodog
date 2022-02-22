@@ -8,9 +8,9 @@ const Payment = () => {
       <div className=" w-full h-full lg:w-[70%] lg:flex  ">
         <div className="w-[100%] h-full lg:w-[70%] lg:h-full  ">
           <div className="contenedor-hijo-titulo w-full lg:w-[100%] h-auto bg-white ">
-            <h1 className=" text-2xl lg:text-3xl 2xl:text-3xl pt-5 text-azulito underline decoration-rojito p-3">
+            <h2 className=" text-2xl lg:text-3xl 2xl:text-3xl pt-5 text-azulito underline decoration-rojito p-3">
               Metodo de pago
-            </h1>
+            </h2>
             <div className="p-5 md:p-10 md:px-28 lg:px-10">
               <a className=" cursor-pointer" onClick={() => setTarjeta(false)}>
                 <div className="direccion bg-grisesitoFuertito h-full flex items-center my-2 rounded-xl p-5">
@@ -25,16 +25,16 @@ const Payment = () => {
                 <div className="direccion bg-grisesitoFuertito h-full flex items-center my-2 rounded-xl p-5">
                   <ul className="text-azulito py-10">
                     <li>
-                      <h1 className="text-2xl font-bold">
+                      <h2 className="text-2xl font-bold">
                         Agregar nueva tarjeta <ion-icon style={{fontSize:"25px"}} name="card-outline"></ion-icon>
-                      </h1>
-                      <h1
+                      </h2>
+                      <h2
                         className={` ${
                           tarjeta ? "text-2xl " : " hidden text-sm italic"
                         }`}
                       >
                         Aqui va el formulario de la tarjeta 
-                      </h1>
+                      </h2>
                     </li>
                   </ul>
                 </div>
@@ -44,12 +44,12 @@ const Payment = () => {
         </div>
         <div className="bg-grisesitoFuertito w-[100%] h-auto lg:w-[30%] lg:h-[70vh]  ">
           <div className="productos-total p-10">
-            <h1 className="font-bold text-xl">Resumen de la compra</h1>
+            <h2 className="font-bold text-xl">Resumen de la compra</h2>
             <hr></hr>
-            <h1 className="py-5 font-medium">Productos :(2)</h1>
+            <h2 className="py-5 font-medium">Productos :(2)</h2>
             <div className="flex">
-              <h1 className=" font-medium">Total :</h1>
-              <h1 className="text-right ">$1293</h1>
+              <h2 className=" font-medium">Total :</h2>
+              <h2 className="text-right ">$1293</h2>
             </div>
           </div>
           <div className="pedido bg-transparent w-full h-[15vh]  border-t-1 border-grisesitoFuertito flex justify-center ">

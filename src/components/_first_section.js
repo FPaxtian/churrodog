@@ -13,15 +13,15 @@ const FirstSection = () => {
                         <img
                             src={require("../assets/pitbull.png")}
                             className="img1 "
-                            alt="churrodog perro feliz"
+                            alt="churrodog alimento"
                         ></img>
                     </div>
                     <div className=" md:block md:w-1/2  bg-white p-10 lg:h-full lg:flex flex items-center justify-center">
                         <div>
                             <h2 className=" text-2xl px-3 md:px-10 md:mt-0 md:text-2xl lg:text-4xl lg:mt-16 2xl:text-6xl 2xl:mt-20 text-slate-800  ">
-                                <a className="underline  decoration-rojito font-bold">
+                                <h1 className="underline  decoration-rojito font-bold">
                                     ChurroDog
-                                </a>{" "}
+                                </h1>
                                 es un alimento con causa, cada compra que tú haces se refleja
                                 en alimento para un perrito en situación de refugio.
                             </h2>
