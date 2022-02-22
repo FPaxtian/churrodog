@@ -6,7 +6,7 @@ const ThirdSection = () => {
         <div className="informacion lg:flex w-full lg:h-[80vh] xl:h-[80vh] bg-slate-900  ">
             <div className=" w-screen lg:w-3/4 h-full xl:p-20 bg-white flex content-center items-center justify-center">
                 <img
-                    src={require("../assets/SACO 20 KILOS.jpg")}
+                    src={require("../assets/PLATO CHURRITO SOLO.png")}
                     className="imgProducto xl:h-auto lg:w-8/12 my-10  h-96 shadow-2xl shadow-[rgb(176,176,176)] rounded-lg "
                     alt="churrodog perro feliz"
                 ></img>

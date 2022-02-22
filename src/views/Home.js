@@ -5,6 +5,7 @@ import ThirdSection from "../components/_third_section";
 import SecondSection from "../components/_second_section";
 import FirstSection from "../components/_first_section";
 import Swal from "sweetalert2";
+import Carouselx from "../components/_carousel";
 const Home = () => {
     const alerta = () => {
         // Swal.fire({
@@ -30,6 +31,9 @@ const Home = () => {
 
             {/* second section */}
             <hr className="salto" />
+            <Carouselx />
+            
+            <hr className="salto" />
             <SecondSection />
 
             {/* third section */}
@@ -37,8 +41,9 @@ const Home = () => {
             <ThirdSection />
 
             {/* fourth section */}
+            
             {/* <hr className="salto" /> */}
-            <FourthSection />
+            {/* <FourthSection /> */}
         </div>
     );
 };
