@@ -8,6 +8,7 @@ import Navbar from './components/_navbar'
 import axios from 'axios'
 import NavbarAdmin from "./components/_navarAdming";
 import { getUserCurrent } from './api/auth'
+import Footer from './components/_footer'
 function App() {
 
   axios.defaults.baseURL = 'https://churro-dog-server-test.herokuapp.com/';
@@ -30,7 +31,7 @@ function App() {
         }
 
         <Routes />
-
+        <Footer></Footer>
       </div>
     </Router>
   );
