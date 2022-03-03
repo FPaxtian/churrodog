@@ -11,7 +11,7 @@ const Navbar = () => {
         <div className="flex sm:justify-center ">
           <img
             src={require("../assets/logo.jpeg")}
-            className="w-32"
+            className="w-40 my-3"
             alt='churro dog logo'
           ></img>
         </div>
