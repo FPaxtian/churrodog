@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link, useHistory, useLocation } from "react-router-dom";
 import Swal from "sweetalert2";
 import LoginSelect from "../components/_loginSelect";
 import { getUserCurrent, updateUser, signOff } from '../api/auth'
@@ -8,8 +7,6 @@ import Address from "../components/_address";
 const Account = () => {
   const status = "recibido";
   const [user, setUser] = useState('')
-  let history = useHistory()
-  let location = useLocation()
 
   useEffect(() => {
     _getUserCurrent()
@@ -30,8 +27,7 @@ const Account = () => {
   }
 
   const goToHome = () => {
-    let { from } = location.state || { from: { pathname: "/" } }
-    history.replace(from)
+    window.location.href = "/"
   }
 
   const churroAlerOff = () => {
@@ -156,13 +152,13 @@ const Account = () => {
             <div class=" lg:w-[70%] pt-5 h-[20vh]  bg-white text-azulito   text-left lg:p-10 ">
               <div className="mt-4 bg-white w-auto h-auto flex">
                 <h1 className="font-bold 2xl:text-3xl">{user.fullname}</h1>
-                <Link onClick={() => editarUsuario(user)}>
+                <button onClick={() => editarUsuario(user)}>
                   <ion-icon
                     className="text-2xl"
                     style={{ marginLeft: 15 }}
                     name="create-outline"
                   ></ion-icon>
-                </Link>
+                </button >
               </div>
               <div className="mt-4 bg-white w-auto h-auto pb-5 lg:pb-10">
                 <ul className="text-sm 2xl:text-lg">
@@ -217,16 +213,16 @@ const Account = () => {
                   <h1 className="text-center font-bold">Estatus</h1>
                   <div className="text-center">
                     {status == "recibido" ? (
-                      <Link>
+                      <button >
                         <ion-icon
                           className="text-lg"
                           style={{ color: "green" }}
                           name="checkmark-circle"
                         ></ion-icon>
                         <h1 className="text-center pb-10">Recibido</h1>
-                      </Link>
+                      </button >
                     ) : status == "pendiente" ? (
-                      <Link>
+                      <button >
                         <ion-icon
                           className="text-lg"
                           style={{ color: "red" }}
@@ -235,16 +231,16 @@ const Account = () => {
                         <h1 className="text-center text-sm pb-10">
                           En proceso
                         </h1>
-                      </Link>
+                      </button >
                     ) : (
-                      <Link>
+                      <button >
                         <ion-icon
                           className="text-lg"
                           style={{ color: "#002360" }}
                           name="airplane"
                         ></ion-icon>
                         <h1 className="text-center text-sm pb-10">Enviado</h1>
-                      </Link>
+                      </button >
                     )}
                   </div>
                 </div>
@@ -260,9 +256,9 @@ const Account = () => {
                 </h1>
               </div>
               <div className="w-[50%] h-auto bg-white flex justify-end p-8 text-3xl rounded-r-lg">
-                <Link onClick={() => direccion()}>
+                <button onClick={() => direccion()}>
                   <ion-icon name="add-circle"></ion-icon>
-                </Link>
+                </button >
               </div>
             </div>
             <Address />
