@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const LoginSelect = () => {
   return (
@@ -15,7 +14,7 @@ const LoginSelect = () => {
             <hr></hr>
             <div class="  ">
               <div className="bg-transparent h-[40vh] w-[100%] text-center text-azulito  ">
-                <Link to={"/login"}>
+                <button to={"/login"}>
                   <button
                     type="button"
                     class="m-2 text-azulito bg-white hover:bg-azulito hover:text-white transition ease-in-out delay-75 animate-fade-in-down font-medium rounded-lg text-2xl px-5 py-2.5 text-center mr-2 mb-2 md:w-[90%] h-1/2"
@@ -26,16 +25,16 @@ const LoginSelect = () => {
                       Inicia sesión
                     </h1>
                   </button>
-                </Link>
-                <Link to={"/singin"}>
-                <button
-                  type="button"
-                  class="m-2 text-azulito bg-white hover:bg-azulito hover:text-white transition ease-in-out delay-75 animate-fade-in-down text-2xl font-medium rounded-lg px-5 py-2.5 text-center mr-2 mb-2 md:w-[90%] h-1/2"
-                >
-                  ¿Aún no estás registrado?
-                  <h1 className="underline decoration-rojito"> Registrate</h1>
-                </button>
-                </Link>
+                </button >
+                <button to={"/singin"}>
+                  <button
+                    type="button"
+                    class="m-2 text-azulito bg-white hover:bg-azulito hover:text-white transition ease-in-out delay-75 animate-fade-in-down text-2xl font-medium rounded-lg px-5 py-2.5 text-center mr-2 mb-2 md:w-[90%] h-1/2"
+                  >
+                    ¿Aún no estás registrado?
+                    <h1 className="underline decoration-rojito"> Registrate</h1>
+                  </button>
+                </button >
               </div>
               <hr></hr>
 
